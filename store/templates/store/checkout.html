@@ -1,0 +1,84 @@
+{% load static %}{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mlinpek Mlinarstvo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'style/main.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="icon"
+      href="{% static 'images/logoMlinpek.png' %}"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    {% include 'store/navbar.html' %}
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="fa fa-angle-double-up"></i>
+    </button>
+
+    <h1 id="pregledPorudzbine">{% trans 'Pregled porudžbine' %}</h1>
+    <table width="100%" id="checkout">
+      <thead>
+        <tr>
+          <td><b>{% trans 'Slika' %}</b></td>
+          <td><b>{% trans 'Proizvod' %}</b></td>
+          <td><b>{% trans 'Cena' %}</b></td>
+          <td><b>{% trans 'Broj' %}</b></td>
+        </tr>
+      </thead>
+
+      {% for item in items %}
+      <tbody>
+        <tr>
+          <td>
+            <p class="infoKadaSeSmanjiEkran" id="infoKadaSeSmanjiEkranSlika">
+              Slika:
+            </p>
+            <img src="{{item.product.imageURL}}" alt="" / width='100'
+            height='100'>
+          </td>
+          <td>
+            <p class="infoKadaSeSmanjiEkran">Naziv:</p>
+            {{item.product.name}}
+          </td>
+          <td>{{item.product.price|floatformat:2}}e</td>
+          <td>
+            <p class="infoKadaSeSmanjiEkran">Broj:</p>
+            <div class="quantity">{{item.quantity}}</div>
+          </td>
+        </tr>
+
+        {% endfor %}
+
+        <tr style="color: red">
+          <td>{% trans 'Ukupno stvari:' %} {{order.get_cart_items}}</td>
+          <td>{% trans 'Ukupna cena:' %} {{order.get_cart_total}}e</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+
+    <div id="checkoutButtons">
+      <a href='{% url "cart" %}'
+        ><button>{% trans 'Nazad u korpu' %}</button></a
+      >
+      <a href='{% url "checkoutConfirm" %}'>
+        <button>{% trans 'Potvrdite narudžbinu (plaćanje pouzećem)' %}</button>
+      </a>
+    </div>
+
+    <script src='{% static "js/cart.js" %}'></script>
+  </body>
+</html>

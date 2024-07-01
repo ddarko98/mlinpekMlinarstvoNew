@@ -1,0 +1,62 @@
+{% load static %} {% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mlinpek Mlinarstvo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'style/main.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="{% static 'images/logoMlinpek.png' %}"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    {% include 'store/navbar.html' %}
+
+    <section id="contact-details">
+      <div class="details">
+        <h2>{% trans 'Kontaktirajte nas!' %}</h2>
+        <div>
+          <li>
+            <i class="fa fa-map">Rumenačka 108, stan 36</i>
+          </li>
+
+          <li>
+            <i class="fa fa-envelope">nebojsa.spasojevic222@gmail.com</i>
+          </li>
+
+          <li>
+            <i class="fa fa-phone">063 553 406</i>
+          </li>
+
+          <li>
+            <i class="fa fa-clock-o">Mon-fri 8h-22h</i>
+          </li>
+          <li>
+            <i class="fa-solid fa-umbrella-beach"></i>
+          </li>
+        </div>
+      </div>
+
+      <div class="map">
+        <iframe
+          src="https://maps.google.com/maps?hl=en&amp;q=Rumenacka%20108,%20Novi%20Sad+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          ><a href="https://www.maps.ie/population/"
+            >Population calculator map</a
+          ></iframe
+        >
+      </div>
+    </section>
+  </body>
+</html>

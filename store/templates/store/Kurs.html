@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mlinpek Mlinarstvo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'style/main.css' %}"
+    />
+    <link
+      rel="icon"
+      href="{% static 'images/logoMlinpek.png' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    {% include 'store/navbar.html' %}
+
+    <section class="product1">
+      <div class="pro-container">
+        <div class="pro">
+          <img
+            src="{% static 'images/kurs.png' %}"
+            alt="Osnovni kurs tehnologije prerade žita image"
+            id="kursSlika"
+          />
+          <div class="des">
+            <b>Naziv: Osnovni kurs tehnologije prerade žita </b>
+
+            <p>
+              <b>Autori: </b> Milan N. Skendžić, dipl. ing. tehnolog i Nebojša
+              Spasojević, dipl. ing tehnolog
+            </p>
+          </div>
+
+          <p style="text-align: justify">
+            <b>Ponuda: </b> Dostavljamo Vam našu Ponudu za stručne usluge kod
+            izvođenja obuke Vaših stručnih kadrova na vođenju tehnološkog
+            procesa prerade pšenice. Napominjemo da će se obuka izvoditi u Vašim
+            pogonima i tokom obuke biće kroz konsultacije definisani neophodni
+            zahvati na konsolidaciji pojedinih tehnoloških celina.
+          </p>
+
+          <p>Cena: 7000e</p>
+          <a href='{% url "kursTehnologije" %}'>Pogledaj ostatak ponude</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mlinpek Mlinarstvo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'style/main.css' %}"
+    />
+    <link
+      rel="icon"
+      href="{% static 'images/logoMlinpek.png' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    {% include 'store/navbar.html' %}
+
+    <section id="blog">
+      <div class="blog-box">
+        <div class="blog-image">
+          <img src="{% static "images/prica1.jpeg" %}" alt="" />
+        </div>
+        <div class="blog-details">
+          <h4>Pšenica i kvalitet brašna u trgovini i preradi</h4>
+          <p>
+            Izjava za 22. pekarsko mlinarske dane: Elieser S. Posner, prevod:
+            N.Spasojević
+          </p>
+          <a href="{% url 'prica1' %}">Pročitajte više</a>
+        </div>
+        <h1>13/01</h1>
+      </div>
+      <hr />
+    </section>
+  </body>
+</html>

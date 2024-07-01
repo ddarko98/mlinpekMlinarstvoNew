@@ -1,0 +1,12 @@
+{% include 'store/navbar.html' %} {% load i18n %}
+
+<div id="potvrdaPorudzbine">
+  {% trans 'Porudžbina uspešna!' %}
+  <h1></h1>
+  <br /><br />
+
+  <form action="{% url 'checkout' %}" method="POST" id="posaljipodatke">
+    {% csrf_token %}
+    <a href='{% url "checkout" %}'>{% trans 'Nazad' %}</a>
+  </form>
+</div>

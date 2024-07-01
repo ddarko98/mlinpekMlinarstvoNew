@@ -1,0 +1,42 @@
+{% load i18n %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pesme</title>
+    <link
+      rel="icon"
+      href="{% static 'images/logoMlinpek.png' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="{% static 'image/mlinpek logo.png' %}"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  </head>
+  <body>
+    {% include 'store/navbar.html' %}
+    <h1 id="pesmeNaslov">Pesme</h1>
+    <div class="contentPesme">
+      <div class="columnPesme">
+        <h2>{% trans 'Pesme Nebojše Spasojevića:' %}</h2>
+        <a href="{% url 'zbirkaPesama' %}" target="_blank">
+          &#127926; 'Zbirka još boljih pesama' &#127926;
+        </a>
+      </div>
+      <div class="columnPesme">
+        <h2>{% trans 'Pesma Ankice Spasojević:' %}</h2>
+        <a
+          href="https://www.youtube.com/watch?v=RlZ4YGSQapk&ab_channel=AnkicaSpasojevi%C4%87"
+          target="_blank"
+        >
+          &#127926;Pesmo moja, sama se napiši &#127926;
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

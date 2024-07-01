@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mlinpek Mlinarstvo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'style/main.css' %}"
+    />
+    <link
+      rel="icon"
+      href="{% static 'images/logoMlinpek.png' %}"
+      type="image/x-icon"
+    />
+    <script src='{% static "js/cart.js" %}'></script>
+    <script type="text/javascript">
+      let user = "{{request.user}}";
+
+      function getToken(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          let cookies = document.cookie.split(";");
+          for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(
+                cookie.substring(name.length + 1)
+              );
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+      let csrftoken = getToken("csrftoken");
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    {% include 'store/navbar.html' %}
+
+    <div id="porudzbinaObrisi">
+      <h1>Obriši porudzbinu</h1>
+      <p>
+        Da li ste sigurni da želite obrisati:
+        <span style="color: red">{{item}} </span>
+      </p>
+
+      <form action="{% url 'deleteOrder' item.id %}" method="POST">
+        {% csrf_token %}
+        <button>
+          <a href="{% url 'cart' %}" id="cancel">Cancel</a>
+        </button>
+        <button type="submit" name="Confirm" id="deleteSubmit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

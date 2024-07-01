@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mlinpek Mlinarstvo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'style/main.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="icon"
+      href="{% static 'images/logoMlinpek.png' %}"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    {% load static %}
+    <section id="header">
+      <div class="headerTop">
+          <a href="{% url 'store' %}">
+              <img src='{% static "images/logoMlinpek.png" %}' class="logo" />
+          </a>
+          <button class="hamburger" id="hamburger">
+              &#9776;
+          </button>
+          <ul id="navbar" class="navbarFirstRow">
+              <li><a href="{% url 'trgovina' %}"> {% trans "Trgovina" %} </a></li>
+              <li><a href="{% url 'pecanje' %}"> {% trans "Pecanje" %}</a></li>
+              <li><a href="{% url 'pesme' %}">{% trans "Pesme" %}</a></li>
+              <li><a href="{% url 'pricesaterena' %}">{% trans "Priče sa terena" %}</a></li>
+              <li><a href="{% url 'kurs' %}">{% trans "Kurs" %}</a></li>
+              <li><a href="{% url 'kontakt' %}">{% trans "Kontakt" %}</a></li>
+              <form class="searchProducts" method="get" action='{% url "searchProducts" %}'>
+                  {% csrf_token %}
+                  <input type="search" aria-label="Search" name="searched" placeholder="Search item" />
+                  <button class="" type="submit"> {% trans 'Pretraga' %} </button>
+              </form>
+              <section id="cartButton">
+                  <a href="{% url 'cart' %}"><i class="fa fa-shopping-cart"></i></a>
+                  <p id="cartTotal">{{ cartItems }}</p>
+              </section>
+          </ul>
+      </div>
+      <div class="navbarDrugiRed">
+          <section id="registerlogin">
+              <button><a href='{% url "registerPage" %}'> {% trans 'Registracija' %} </a></button>
+              <button><a href='{% url "loginPage" %}'>{% trans 'Prijava' %}</a></button>
+              <button><a href="{% url 'logoutPage' %}">{% trans 'Odjava' %}</a></button>
+              <form action="{% url 'set_language' %}" method="get" id='odabirJezika'>
+                  {% csrf_token %}
+                  <select name="language" onchange="this.form.submit()">
+                      <option value="">{% trans 'Odabir jezika' %}</option>
+                      <option value="sr" id='srbijaSlika' {% if LANGUAGE_CODE == 'sr' %}selected{% endif %}> {% trans 'Srpski' %} </option>
+                      <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}> {% trans 'Engleski' %}</option>
+                      <option value="zh-hans" {% if LANGUAGE_CODE == 'zh-hans' %}selected{% endif %}>{% trans 'Kineski' %}</option>
+                  </select>
+              </form>
+          </section>
+          <div id='pozdrav'>
+              {% trans "Pozdrav" %}, <span style="color: red">{{ request.user }}</span>
+              {% for message in messages %}
+              <p id="errors" style='padding-top: 30px;'>{{ message }}</p>
+              {% endfor %}
+          </div>
+      </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navbar = document.getElementById('navbar');
+  
+      hamburger.addEventListener('click', function() {
+          navbar.classList.toggle('active');
+      });
+  });
+  </script>
+
+  
+  </body>
+</html>

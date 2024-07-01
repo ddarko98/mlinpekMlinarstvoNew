@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mlinpek Mlinarstvo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'style/main.css' %}"
+    />
+    <link
+      rel="icon"
+      href="{% static 'images/logoMlinpek.png' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    {% include 'store/navbar.html' %}
+
+    <section id="prica1">
+      <h1>Pšenica i kvalitet brašna u trgovini i preradi</h1>
+      <p>
+        "Danas, svaki mlin mora biti spreman da prerađuje pšenicu poreklom iz
+        različitih zemalja širom sveta. Prilikom nabavke, pitanje cene je
+        svakako veoma važno. Međutim, kvalitet i prerada su takođe važni, zato
+        što se zahtevi odnosno specifikacije za brašna značajno razlikuju širom
+        sveta. Pored cene, sirovina mora da bude zdrava, pošto je to živ
+        organizam, sve dok se konačno ne preradi u ispečen - finalni proizvod.
+        Pšenica ne sme da sadrži DON, insekte, proklijala zrna, suvišnu vlagu,
+        previše loma, dokidž primese i smežurana zrna. Pomenute primese, ukoliko
+        su prisutne, znaci su loše pšenice koja u nekim slučajevima ne sme da se
+        prerađuje za ljudsku upotrebu, sve dok se ne primene odgovarajuće mere.
+        Cena zdrave pšenice treba da se odredi na bazi postojećeg sistema
+        klasifikacije (USA, EC, ili neke druge). Vlaga, protein i sadržaj
+        glutena su parametri koje kupac treba da uzme u obzir da bi bio u
+        prilici da proizvede brašno kvaliteta prema specifikaciji kupca.
+        Međutim, ono što nedostaje u SVIM sistemima klasifikacije pšenice su dva
+        parametra koja bitno utiču na preradu pšenice. Kupac pšenice mora da
+        uzme u obzir ili bar da ima informaciju o njima pre donošenja odluke
+        koliko daleko može da ide i da plati za neku pšenicu. Pomenuta dva
+        parametra su: masa 1000 zrna (TKW) i krupnoća tj. raspodela krupnoće
+        zrna pšenice. Ovo su dva osnovna parametra koja utiču na preradu i
+        kvalitet finalnih proizvoda. Promene u procesu prerade ili podešenost
+        rada mašina zavise od ova dva parametra. Ukoliko pšenica nije bolesna i
+        kontaminirana, uvek je dobra za mlevenje. Profesionalni mlinar neće
+        okarakterisati pšenicu kao lošu; on će uvek tražiti načine da je preradi
+        uz postizanje maksimalnog profita i kvaliteta finalnih proizvoda.
+        Profesionalni mlinar mora da dobije maksimum informacija o pšenici iz
+        najvažnijeg odelenja mlinske laboratorije - "odelenje za ispitivanje
+        pšenice". Ukoliko su informacije kompletne, tada u mlinu može doneti
+        dobru odluku koja obuhvata neophodna podešavanja u cilju pokušaja
+        postizanja maksimalnog prinosa i kvaliteta brašna. I najbolja pšenica se
+        može oštetiti tokom mlevenja, ukoliko neophodna podešavanja mašina nisu
+        dobro sprovedena. Kompletno automatizovani mlinovi, koji se u velikom
+        broju slučajeva prodaju osobama koje su impresionirane automatikom i
+        kompjuterima, ne rade u vrhu svoje efikasnosti bez dobrog profesionalnog
+        mlinara. Podešavanja u potpuno automatizovanom mlinu, ne mogu se
+        sprovesti ispred ekrana kompjutera. Ja sam u potpunosti za automatizovan
+        mlinski pogon i proces mlevenja ali samo u fazi pokretanja i
+        zaustavljanja procesa, kao i tokom oglašavanja u slučaju tehničkih
+        problema. Međutim, godinama unazad dobro podešeni i uravnoteženi mlinovi
+        radili su 24/7 tokom cele godine bez bilo kakvog zaustavljanja, pre nego
+        što su kompjuteri bili izmišljeni. Mlinar mora boraviti na spratu mlina
+        gde se obavljaju sva neophodna testiranja i podešavanja. Uravnotežavanje
+        procesa, profesionalni mlinar obavlja testiranjem svih međuproizvoda
+        mlevenja i svih pasažnih brašna, i analizom rezultata sve do tačke dok
+        mlin ne bude optimizovan za rad sa aktuelnom pšenicom. Svako
+        pojednostavljenje pomenutog zadatka predstavlja problem koji će izazvati
+        nezadovoljstvo mušterija i značajne gubitke u mlinu. Laboratorija
+        finalnog kvaliteta brašna je samo poslednja provera da specifikacija
+        brašna ispunjava zahteve kupca. "
+      </p>
+
+      <h2>Elieser S. Posner</h2>
+      <p>
+        Izvod iz knjige Wheat flour milling (E.S.Posner i A.N.Hibbs, second
+        edition) a na istu temu: "Veliki broj problema u vezi trgovanja i
+        prerade pšenice bi se eliminisao kad bi se koristili isti parametri i
+        metode za klasifikaciju i ocenu pšenice. Samo je pitanje vremena kad će
+        otvoreno tržište primorati proizvođače pšenice, trgovce, mlinare i
+        krajnje korisnike brašna da kreiraju opšti - globalni metod
+        klasifikacije pšenice. Profesionalci u proizvodnji, trgovini,
+        razvrstavanju i preradi moraju da identifikuju faktore značaja za
+        različite vrste pšenica. U USA i drugim zemljama sa velikom proizvodnjom
+        pšenice, sistem razvrstavanja je pod konstantnom revizijom i predlozi za
+        njegovu nadogradnju su dostupni preko interneta za široku javnost." U
+        okviru teme o parametrima kvaliteta pšenice u prometu i preradi (22.
+        pekarsko mlinarski dani, 2. sajam pekarstva i mlinarstva; Novi Sad,
+        oktobar 2017), dominirali su i komentari o:
+      </p>
+      <ul>
+        <li>1. ceni kvalitetnije pšenice tj. "ko će da plati viši kvalitet"</li>
+        <li>
+          2. nepostojanju uslova (uglavnom malo tj. jedan prijemnim bunker) za
+          razvrstavanje pšenice po kvalitetu u silosima za žito
+        </li>
+      </ul>
+
+      <h2>KO ĆE DA PLATI VIŠI KVALITET PŠENICE.</h2>
+      <p>
+        Oko ovog pitanja će još dugo da se vode polemike na najvišem
+        nivou.....ali ako vam kažem da poznajem više dobrih kompanija koje
+        plaćaju skuplje viši kvalitet (i koje bi rado kupile kvalitetnu pšenicu
+        na bližoj lokaciji od Austrije i Mađarske) i da ću vas rado povezati sa
+        njima bez ikakve provizije u poslu...... Zaključak: Ima ko da plati viši
+        kvalitet!! Ne postoje uslovi da se pšenica razvrsta po kvalitetu zbog: -
+        jednog prijemnog bunkera .............90% slučajeva - ostalo
+        ..............................................10% slučajeva. Dakle
+        problem je u jednom prijemnom bunkeru! Zašto je to problem? Jedan od
+        najčešćih odgovora: "zato što pšenica zaostaje na dnu transportera i
+        meša se sa sledećom partijom koja dolazi iz prijemnog bunkera." Ovo je
+        najčešće objašnjenje problema jednog prijemnog bunkera i nemogućnosti
+        razvrstavanja pšenice po kvalitetu. Pošto mi ovo objašnjenje nikako ne
+        leži postavio sam pitanje: koliko je (%) zaostajanje žita u
+        horizontalnim transporterima (redlerima, puževima) mojim kolegama
+        mlinarima u Srbiji, Americi i Izraelu. Odgovori iz Srbije - skoro isti
+        od svih ispitanika: - nije problem u zaostajanju materijala. Ako nešto i
+        zaostaje, to je zanemarljivo. Problem je u tome što su naši radnici
+        navikli da tokom prijema otvore sve zasune na razdelnom redleru
+        nadsilosne galerije i tek kad se napuni jedna silo ćelija do kraja
+        nastavlja da se puni sledeća po redu. Obično su zasuni ručni, nema lifta
+        u slilosu i to je tako. U prijemni bunker se sipa prikolica na prikolicu
+        ........eto u tom je najveći problem. Drugi veliki problem je gužva
+        tokom prijema u vreme žetve i loša organizacija rada na prijemu.
+      </p>
+      <h2>Odgovori iz inostranstva:</h2>
+      <h3>Amerika</h3>
+      <p>
+        Pitanje: Dear Mr. Scott, please can you comment the following statement:
+        "If you want to classify the incoming (harvested) wheat regarding a
+        quality, you must have more than one receiving pit, otherwise you will
+        have the cross contamination effect". Molim vas za komentar u vezi
+        sledeće izjave: "Ako želite da razvrstate pšenicu tokom prijema po
+        kvalitetu, morate imati na raspolaganju više od jednog prijemnog
+        bunkera, u suprotnom imaćete problem mešanja robe različintog
+        kvaliteta." Odgovor: Totally disagree, sounds like a scam to me. Haven’t
+        seen a mill in the world that has multiple receiving pits to prevent
+        cross contamination. Apsolutno se ne slažem, zvuči kao prevara. Nisam
+        nigde u svetu video mlin koji ima više prijemnih bunkera zbog
+        sprečavanja mešanja pšenice različitih kvaliteta. Izrael: Dear Nesha, I
+        do not agree that there is a need for more than one receiving pit. Only
+        if you have trucks and rail delivering wheat. In a good design and
+        organized mill there is a need for only one receiving pit if wheat
+        arrives only by trucks. Elie Ne slažem se da postoji potreba za više od
+        jednog prijemnog bunkera. Jedino u slučaju ako imate kolski i železnički
+        prijem pšenice. U dobro projektovanim i organizovanim mlinovima dovoljan
+        je samo jedan prijemni bunker ako se pšenica isporučuje kamionima.
+        Zaključak: u dobro tehnološki opremljenom i organizovanom silosu, može
+        se sa jednim prijemnim bunkerom obaviti razvstavanje pšenice po
+        kvalitetu, naravno ukoliko se utvrđuje kvalitet u prijemnoj
+        laboratoriji. Rezime.....epp Mlinpek zavod-a: U pogledu plaćanja više
+        cene pšenice, nudimo vam kontak sa kompanijama koje plaćaju pšenicu po
+        kvalitetu, a u pogledu efikasnog razvrstavanja po kvalitetu i prestanka
+        sa lošom praksom tokom prijema, možemo vam ponuditi projektna rešenja
+        osavremenjavanja - automatizacije postojećih tehnoloških linija.
+      </p>
+      <h2>
+        Za pred kraj još dve tri kratke priče sa terena i okruženja a na istu
+        temu.
+      </h2>
+      <p>
+        Priča 1: Mlinar koji je godinama uvozio kvalitetnu - skupu pšenicu iz
+        Mađarske organizovao je proizvodnju pšenice u svom okruženju tako što je
+        odabranu sortu, uz preporuku stručnjaka o agrotehnici, ponudio (pod
+        ugovor o otktupljivanju kompletnog roda) farmerima .....Epilog: sad -
+        "već drugu godinu za redom imam isti kvalitet (A1, A2) pšenice kao u
+        Mađarskoj ali po ceni nižoj od 25-30%.....i svima dobro!" Priča 2:
+        Trgovac pšenicom iz okruženja: "vi (Srbija) imate dobru pšenicu, al dok
+        se ne dosetite da je razvrstavate po kvalitetu, ja dobro trgujem sa
+        vama". Moj komentar: Ovo mi jako liči na izjavu pokojnog Ljube Moljca:
+        "imam lepe crte lica, samo nepravilno raspoređene!" Priča 3: mlinar:
+        "Imali smo tokom prijema i nekoliko prikolica sa 14% proteina. " ja:"I
+        znaš li u kojoj se ćeliji nalazi takva pšenica?" mlinar: "naravno!" Za
+        kraj jedan kometar o ceni pšenice i brašna. Milan Prostran (ekonomski
+        analitičar) ukazuje na ekonomski prihvatljiv - idealan odnos cena
+        pšenice, brašna i hleba, 1:2:4. Komentar Vukosava Sakovića je da to
+        verovatno nikada neće biti i da će cene uvek određivati tržite.....
+        Jedan domaći kolega mlinar bi bio zadovoljan da odnos cene pšenice i
+        brašna bude 1:1.4. To bi po današnjim cenama bilo: Pšenica 155E/t,
+        brašno 217E/t Ako je izbrašnjavanje 80%, cena brašna bi bila:
+        217x0.8=173,6E/t a cena stočnog brašna (20%): 100E/tx0.2= 20E/t Ukupno:
+        173,6 + 20 = 193.6 E/t......................to je vrednost proizvodnje
+        Ako od ovoga odbijemo cenu pšenice od 155E/t, dobija se trošak
+        proizvodnje tj. 193.6-155=38.6 E/t (bez obračunate amortizacije).
+        Dobijeni rezultat se može proveriti kad se mesečni račun (cena svih
+        troškova) podeli sa količinom prerađene pšenice (tj. količinom proizvoda
+        tj. visinom naplaćenih faktura za isporučunu robu......) Jedan drugi
+        mlinar (iz okruženja) bi se kladio da radi na maksimumu rentabilnosti i
+        da su mu troškovi po jedinici proizvodnje na donjoj granici i da je to
+        oko 40-45 E/t (uz obračunatu amortizaciju kao fiksni trošak). Kakva je
+        računica ako se brašno T500 prodaje po ceni od 180E/t? To bi značilo da
+        je cena proizvodnje (pri odličnom radu mlina I=80%), 180 x 0.8 + 100 x
+        0.2 = 144+20= 164 E/t. Ako je pšenica pri tom koštala 155 E/t, onda bi
+        moj kolega iz prethodnog pasusa uveliko izgubio opkladu jer su u ovom
+        slučaju troškovi proizvodnje 164-155= 9E/t??????
+      </p>
+    </section>
+  </body>
+</html>

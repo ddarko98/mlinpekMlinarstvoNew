@@ -1,0 +1,54 @@
+{% block content %} {% load static %}{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link
+      rel="icon"
+      href="{% static 'images/logoMlinpek.png' %}"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    {% include 'store/navbar.html' %}
+
+    <div class="formWrapper">
+      <form method="POST" id="registerForm" class="formContainer">
+        <h1 id="naslov">{% trans 'Registracija' %}</h1>
+        <div class="container">
+          {% csrf_token %} {{form.username.label}} {{form.username}}
+          <br />
+          <br />
+          {{form.email.label}} {{form.email}}
+          <br />
+          {% trans 'Grad' %} {{form.first_name}}
+          <br />
+
+          {% trans 'Adresa' %} {{form.last_name}}
+          <br />
+
+          <br />
+          {{form.password1.label}} {{form.password1}}
+          <br />
+          <br />
+          {{form.password2.label}} {{form.password2}}
+
+          <input type="submit" name="Create User" id="registersubmit" />
+          <div id="errors">{{form.errors}}</div>
+          <p id="haveacc">
+            {% trans 'Imate već nalog?' %}
+
+            <a href="{% url 'loginPage' %}"> {% trans 'Prijavi' %} </a>
+            {% trans 'se ovde.' %}
+          </p>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+{% endblock content %}

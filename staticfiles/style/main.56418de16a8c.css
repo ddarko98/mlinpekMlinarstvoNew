@@ -1,0 +1,1070 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+#myBtn:hover {
+    background-color: #555;
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal.aktiviraj {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.logo {
+    width: 100px;
+    height: 50px;
+    background: white;
+    border-radius: 25%;
+    margin-top: 10px;
+}
+
+#header {
+    padding: 20px 80px;
+    background: rgb(252, 184, 57);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    border-bottom: 3px solid green;
+    display: flex;
+    flex-direction: column;
+    /* Kolona za raspored elemenata */
+}
+
+.headerTop {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    /* Poravnavanje elemenata po sredini */
+}
+
+.logo {
+    width: 150px;
+    height: 100px;
+    background: white;
+    border-radius: 25%;
+    margin-top: 10px;
+}
+
+.navbarFirstRow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    /* Da popuni prostor između loga i desnih elemenata */
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 10px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: green;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: '';
+    width: 30%;
+    height: 3px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#navbar .searchProducts {
+    display: flex;
+    margin-left: 10px;
+}
+
+#navbar input {
+    height: 3rem;
+    padding: 0 1.25em;
+    font-size: 25px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#navbar button {
+    background-color: green;
+    color: #fff;
+    white-space: nowrap;
+    border-radius: 10%;
+    width: 50%;
+    font-size: 20px;
+}
+
+#cartButton {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+#cartButton i {
+    font-size: 40px;
+    color: green;
+    padding: 10px 20px 0 10px;
+}
+
+#cartTotal {
+    font-size: 20px;
+    border: 2px solid green;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.hamburger {
+    visibility: hidden;
+    /* Sakrij dugme za hamburger */
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #1a1a1a;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.navbarDrugiRed {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    border-top: 1px solid green;
+    padding-top: 10px;
+}
+
+#registerlogin {
+    display: flex;
+    align-items: center;
+}
+
+#registerlogin button {
+    background-color: green;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20%;
+    padding: 10px;
+}
+
+#registerlogin a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+#odabirJezika select {
+    font-size: 20px;
+    padding: 7px;
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+}
+
+#odabirJezika option {
+    font-size: 20px;
+    background-color: white;
+    color: black;
+}
+
+#errors {
+    color: red;
+    padding-left: 5px;
+}
+
+.formWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.formContainer {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    border: 1px green solid;
+    margin-top: 50px;
+    /* Ograničava širinu forme */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+#registerForm h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#registerForm label {
+    margin-top: 10px;
+}
+
+#registersubmit {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#registersubmit:hover {
+    background-color: darkgreen;
+}
+
+#registerForm input[type='text'],
+#registerForm input[type='email'],
+#registerForm input[type='password'],
+#registerForm select,
+#registerForm textarea {
+    height: 50px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#haveacc {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#haveacc a {
+    color: green;
+    text-decoration: none;
+}
+
+#haveacc a:hover {
+    text-decoration: underline;
+}
+
+#loginForm h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#loginForm input {
+    height: 50px;
+    /* Podešava visinu input polja */
+    padding: 10px;
+    font-size: 20px;
+    /* Povećava veličinu fonta */
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#loginsubmit {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#loginsubmit:hover {
+    background-color: darkgreen;
+}
+
+.video-container {
+    position: relative;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Zatamnjenje pozadine */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.feature .fe-box {
+    width: 300px;
+    height: 250px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+    margin: 20px 10px;
+}
+
+.feature .fe-box:hover {
+    box-shadow: 10px 10px 54px rgba(70, 62, 211, 0.1);
+}
+
+.feature h3 {
+    color: green;
+    font-size: 30px;
+}
+
+.feature h4 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.feature h5 {
+    font-size: 20px;
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+.detaljnijeKnjige {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 50px;
+    grid-row-gap: 0px;
+}
+
+.detaljnijeKnjige a {
+    text-decoration: none;
+    font-size: 30px;
+    color: green;
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+#pecanje {
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#pesmeNaslov {
+    font-size: 40px;
+    padding: 20px;
+}
+
+.contentPesme {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.columnPesme {
+    background: #f9f9f9;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.columnPesme h2 {
+    margin-top: 0;
+}
+
+.columnPesme a {
+    display: block;
+    margin-top: 10px;
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.columnPesme a:hover {
+    text-decoration: underline;
+}
+
+
+/*trgovina*/
+
+#sortiraj {
+    margin-top: 50px;
+}
+
+#sortiraj label,
+select {
+    font-size: 30px;
+}
+
+#sortiraj select {
+    font-size: 20px;
+    padding: 7px;
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+}
+
+#sortiraj select option {
+    background: white;
+    color: black;
+}
+
+.product1 {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.product1 .pro-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.product1 .pro {
+    width: 570px;
+    height: 700px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 30px;
+    transition: 0.2s ease;
+    position: relative;
+    /*ovo position relative ide jer ako u klasu korpe stavis position absolute onda korpa odleti skroz u hero section*/
+}
+
+.product1 .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+.product1 .pro img {
+    border-radius: 20px;
+    width: 500px;
+    height: 450px;
+    padding: 15px;
+}
+
+.product1 .pro a {
+    text-decoration: none;
+    color: black;
+}
+
+.product1 .pro .des {
+    text-align: start;
+    padding: 10px 0;
+}
+
+.product1 .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 29px;
+}
+
+.product1 .pro .des h4 {
+    padding-top: 7px;
+    font-size: 27px;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.product1 .pro .cart {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    font-weight: 500;
+    color: green;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+#productDetails {
+    display: flex;
+    margin-top: 20px;
+}
+
+#productDetails .productDetailsImage {
+    width: 50%;
+    padding: 30px 50px 0 20px;
+    width: 400px;
+    height: 450px;
+}
+
+#productDetails .productDetailsInfo {
+    display: block;
+}
+
+#productDetails .productDetailsInfo {
+    margin: 30px 0 0 50px;
+}
+
+#productDetails .productDetailsInfo #productDetailsName {
+    padding-bottom: 30px;
+    font-size: 40px;
+}
+
+#productDetails .productDetailsInfo #productDetailsPrice {
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+
+#productDetails .productDetailsInfo #productDetailsDescription {
+    padding-bottom: 30px;
+    font-size: 25px;
+    text-align: justify;
+    padding-right: 30px;
+}
+
+.productDetailsInfo button {
+    background-color: green;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20%;
+    padding: 10px;
+}
+
+.productDetailsInfo a button {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+#blog {
+    padding: 150px 150px 0 150px;
+}
+
+#blog .blog-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    padding-bottom: 90px;
+}
+
+#blog img {
+    width: 450px;
+    height: 250px;
+    margin-right: 20px;
+}
+
+#blog .blog-details {
+    width: 50%;
+}
+
+#blog .blog-details p {
+    font-size: 34px;
+    padding: 10px 0;
+}
+
+#blog .blog-details h4 {
+    font-size: 40px;
+}
+
+#blog .blog-details a {
+    text-decoration: none;
+    font-size: 21px;
+    color: #000;
+    font-weight: 700;
+    position: relative;
+    transition: 0.3s;
+}
+
+#blog .blog-details a::after {
+    content: '';
+    width: 50px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 4px;
+    right: -60px;
+}
+
+#blog .blog-details a:hover {
+    color: green;
+}
+
+#blog .blog-details a:hover::after {
+    background-color: #088178;
+}
+
+#blog .blog-box h1 {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    font-size: 70px;
+    font-weight: 700;
+    color: #c9cbce;
+}
+
+#prica1 h1 {
+    font-size: 35px;
+    padding-top: 25px;
+    text-align: center;
+}
+
+#prica1 h2 {
+    font-size: 30px;
+    padding: 20px 0 10px 5px;
+}
+
+#prica1 p {
+    font-size: 20px;
+    text-align: justify;
+    padding: 12px;
+    line-height: 1.6;
+}
+
+#contact-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 0px;
+    margin-top: 100px;
+}
+
+#contact-details .details {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+#contact-details .details li {
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+#contact-details iframe {
+    width: 80%;
+    height: 400px;
+}
+
+#korpa {
+    margin: 100px 40px 0 40px;
+}
+
+#korpa #naslovKorpa {
+    font-size: 50px;
+    padding-bottom: 40px;
+}
+
+#korpa .korpaSlika img {
+    width: 150px;
+    height: 200px;
+}
+
+#korpa thead td {
+    color: red;
+    font-size: 30px;
+    padding-bottom: 40px;
+}
+
+#korpa tbody td {
+    padding-top: 40px;
+    font-size: 20px;
+}
+
+.infoKadaSeSmanjiEkran {
+    visibility: hidden;
+}
+
+#cartCheckout {
+    margin: 50px 0 30px 0;
+    font-size: 30px;
+}
+
+#cartCheckout #nastavi {
+    text-decoration: none;
+}
+
+#cartCheckout button {
+    background-color: green;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20%;
+    padding: 10px;
+}
+
+#cartCheckout button a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+#porudzbinaObrisi,
+#potvrdaPorudzbine {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#porudzbinaObrisi p {
+    font-size: 20px;
+    padding: 30px 0 20px 0;
+}
+
+#porudzbinaObrisi button,
+#potvrdaPorudzbine a,
+#potvrdaPorudzbine #confirmSubmit {
+    background-color: green;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    border-radius: 20%;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+
+#porudzbinaObrisi button a,
+#deleteSubmit {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+#pregledPorudzbine {
+    padding: 20px 0 0 20px;
+    font-size: 35px;
+}
+
+#checkout {
+    margin-top: 70px;
+    margin-left: 10px;
+}
+
+#checkout img {
+    width: 150px;
+    height: 200px;
+}
+
+#checkout thead td {
+    color: red;
+    font-size: 30px;
+    padding-bottom: 40px;
+}
+
+#checkout tbody td {
+    padding-top: 40px;
+    font-size: 20px;
+}
+
+#checkoutButtons button {
+    background-color: green;
+    margin: 30px 10px 20px 10px;
+    border-radius: 20%;
+    padding: 10px;
+}
+
+#checkoutButtons a button {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.ponuda h1 {
+    text-align: center;
+    padding: 50px 0 20px 0;
+}
+
+.ponuda p {
+    padding: 0 20px 0 20px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.tables table {
+    margin: 0 15px 30px 15px;
+}
+
+.tables h3 {
+    padding-left: 15px;
+}
+
+.tables table td {
+    font-size: 22px;
+    text-align: justify;
+    padding: 10px 0;
+}
+
+footer {
+    font-size: 50px;
+    text-align: center;
+    padding: 100px 0;
+    margin-top: 100px;
+    background-color: rgb(252, 184, 57);
+}
+
+@media (max-width: 1300px) {
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        background: none;
+        border: none;
+        color: green;
+        cursor: pointer;
+        padding: 10px;
+        visibility: visible;
+    }
+    #navbar {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    #navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    #navbar li {
+        padding: 10px;
+        width: 100%;
+    }
+    .headerTop {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .logo {
+        width: 100px;
+        height: 80px;
+        margin-top: 5px;
+    }
+    #navbar li a {
+        font-size: 20px;
+    }
+    #navbar input {
+        font-size: 20px;
+        width: calc(100% - 60px);
+    }
+    #navbar button {
+        width: auto;
+        font-size: 16px;
+    }
+    #cartButton i {
+        font-size: 30px;
+        padding: 5px 10px 0 5px;
+    }
+    #cartTotal {
+        font-size: 16px;
+        padding: 3px;
+    }
+    .navbarDrugiRed button {
+        margin: 10px 0;
+        display: block;
+    }
+    .navbarDrugiRed #registerlogin button a,
+    #odabirJezika select {
+        font-size: 15px;
+    }
+    .navbarDrugiRed #registerlogin {
+        display: block;
+    }
+    .video-container video {
+        height: 400px;
+        /* Adjust video height for mobiles */
+    }
+    .text-overlay {
+        font-size: 18px;
+        /* Adjust font size for better readability */
+    }
+    .feature .fe-box {
+        width: 100%;
+        /* Make feature boxes stack on mobiles */
+        margin: 10px 0;
+    }
+    .navbarDrugiRed {
+        justify-content: flex-start;
+        /* Align content to the left */
+    }
+    .product1 .pro-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .contentPesme {
+        display: flex;
+        flex-direction: column;
+    }
+    #blog {
+        padding-left: 10px;
+        margin-left: 10px;
+    }
+    .blog-box {
+        display: flex;
+        flex-direction: column;
+    }
+    .blog-image {
+        order: 1;
+        width: 200px;
+        height: 200px;
+        padding-bottom: 300px;
+        margin: 0;
+    }
+    .blog-details {
+        order: 2;
+    }
+    #contact-details {
+        display: flex;
+        flex-direction: column;
+    }
+    #korpa table tbody .fa-close {
+        margin-top: 70px;
+    }
+    #korpa table thead {
+        display: none;
+    }
+    #korpa table tbody tr td {
+        display: flex;
+        flex-direction: column;
+    }
+    .infoKadaSeSmanjiEkran {
+        visibility: visible;
+        color: red;
+    }
+    #cartCheckout tbody td {
+        display: flex;
+        flex-direction: column;
+        padding: 40px 0;
+    }
+    #checkout thead tr td {
+        display: none;
+    }
+    #checkout tbody tr td {
+        display: flex;
+        flex-direction: column;
+    }
+    #checkout tbody #infoKadaSeSmanjiEkranSlika {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    #header {
+        padding: 5px 10px;
+    }
+    .logo {
+        width: 80px;
+        height: 60px;
+    }
+    #navbar li a {
+        font-size: 18px;
+    }
+    #navbar input {
+        font-size: 18px;
+    }
+    #navbar button {
+        font-size: 14px;
+    }
+    #cartButton i {
+        font-size: 25px;
+    }
+    #cartTotal {
+        font-size: 14px;
+    }
+    .navbarDrugiRed {
+        display: flex;
+    }
+    .product1 .pro-container {
+        width: 200px !important;
+        height: 200px !important;
+    }
+    .product1 .pro-container img {
+        width: 250px !important;
+        height: 250px !important;
+    }
+    .blog-image img {
+        width: 200px !important;
+        height: 200px !important;
+        margin: 0 !important;
+    }
+    #navbar.active {
+        display: flex;
+    }
+}

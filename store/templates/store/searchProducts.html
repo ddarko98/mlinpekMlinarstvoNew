@@ -1,0 +1,31 @@
+{% include 'store/navbar.html' %}{% load i18n %}
+
+<section id="product1">
+  {% if products %} {% for product in products %}
+  <div class="pro-container">
+    <div class="pro">
+      <img src="{{product.imageURL}}" width="350px" height="400px" alt="" />
+
+      <div class="des">
+        <h5>Naziv: {{product.name}}</h5>
+
+        <h4>Cena: {{product.price|floatformat:2}}e</h4>
+        <h4>Autor: {{product.author}}</h4>
+      </div>
+      <a href="#">
+        <i
+          class="fa fa-shopping-cart cart update-cart"
+          data-product="{{product.id}}"
+          data-action="add"
+          onclick="updateToCart()"
+        ></i>
+      </a>
+    </div>
+
+    {% endfor %} {% else %}
+    <p style="text-align: center; font-size: 30px; padding-top: 50px">
+      {% trans 'Nismo pronašli željeni produkt'%}
+    </p>
+    {% endif %}
+  </div>
+</section>

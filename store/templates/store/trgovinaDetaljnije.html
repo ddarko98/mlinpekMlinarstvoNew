@@ -1,0 +1,38 @@
+{% load static %}{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ product.name }}</title>
+    <link
+      rel="icon"
+      href="{% static 'images/logoMlinpek.png' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'style/main.css' %}" />
+  </head>
+  <body>
+    {% include 'store/navbar.html' %}
+    <section id="productDetails">
+      <div class="productDetailsImage">
+        <img src="{{product.imageURL}}" alt="" />
+      </div>
+      <div class="productDetailsInfo">
+        <h1 id="productDetailsName">{{ product.name }}</h1>
+        <p id="productDetailsPrice">{{ product.price }} e</p>
+        <p id="productDetailsDescription">{{ product.description }}</p>
+
+        <a href="{% url 'trgovina' %}">
+          <button>Nazad na listu proizvoda</button>
+        </a>
+      </div>
+    </section>
+  </body>
+</html>
+{% endblock content %}

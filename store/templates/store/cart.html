@@ -1,0 +1,142 @@
+{% load static %} {% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mlinpek Mlinarstvo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'style/main.css' %}"
+    />
+    <link
+      rel="icon"
+      href="{% static 'images/logoMlinpek.png' %}"
+      type="image/x-icon"
+    />
+    <script type="text/javascript">
+      let user = "{{request.user}}";
+
+      function getToken(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          let cookies = document.cookie.split(";");
+          for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(
+                cookie.substring(name.length + 1)
+              );
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+      let csrftoken = getToken("csrftoken");
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    {% include 'store/navbar.html' %}
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="fa fa-angle-double-up"></i>
+    </button>
+
+    <section id="korpa">
+      <h1 id="naslovKorpa">Korpa</h1>
+      <table width="100%">
+        <thead>
+          <tr>
+            <td><b>{% trans 'Obriši'%}</b></td>
+            <td><b>{% trans 'Slika'%}</b></td>
+            <td><b>{% trans 'Proizvod'%}</b></td>
+            <td><b>{% trans 'Cena'%}</b></td>
+            <td><b>{% trans 'Broj'%}</b></td>
+            <td><b>{% trans 'Ukupno'%}</b></td>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for item in items %}
+          <tr>
+            <td>
+              <a href="{% url 'deleteOrder' item.id %}">
+                <i class="fa fa-close"></i>
+              </a>
+            </td>
+
+            <td class="korpaSlika">
+              <p class="infoKadaSeSmanjiEkran">Slika:</p>
+              <img src="{{item.product.imageURL}}" alt="" / >
+            </td>
+
+            <td class="korpaIme">
+              <p class="infoKadaSeSmanjiEkran">Naziv:</p>
+              {{item.product.name}}
+            </td>
+
+            <td class="korpaCena">
+              <p class="infoKadaSeSmanjiEkran">Cena:</p>
+              {{item.product.price|floatformat:2}}e
+            </td>
+
+            <td class="korpaBroj">
+              <p class="infoKadaSeSmanjiEkran">Broj:</p>
+              <div class="quantity">{{item.quantity}}</div>
+              <i
+                onclick="updateToCart(event)"
+                class="fa fa-arrow-up update-cart"
+                data-product="{{item.product.id}}"
+                data-action="add"
+              ></i>
+              <i
+                onclick="updateToCart(event)"
+                class="fa fa-arrow-down update-cart"
+                data-product="{{item.product.id}}"
+                data-action="remove"
+              ></i>
+            </td>
+            <td class="korpaTotal">
+              <p class="infoKadaSeSmanjiEkran">Ukupno</p>
+              {{item.get_total}}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+    <hr />
+    <table width="100%" id="cartCheckout">
+      <thead id="nastavi">
+        <tr>
+          <td>
+            <button>
+              <a href="{% url 'trgovina' %}"
+                >{%trans 'Nastavi sa kupovinom'%}</a
+              >
+            </button>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{%trans 'Ukupno stvari:'%} {{order.get_cart_items}}</td>
+          <td>{%trans 'Ukupna cena:'%} {{order.get_cart_total}}e</td>
+          <td>
+            <button>
+              <a href="{% url 'checkout' %}">{%trans 'Kasa'%}</a>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script src='{% static "js/cart.js" %}'></script>
+  </body>
+</html>

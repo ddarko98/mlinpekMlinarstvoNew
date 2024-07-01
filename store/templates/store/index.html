@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mlinpek Mlinarstvo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'style/main.css' %}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+    rel="icon"
+    href="{% static 'images/logoMlinpek.png' %}"
+    type="image/x-icon"
+  />
+  
+  </head>
+  <body>
+   
+    {% include 'store/navbar.html' %}
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="fa fa-angle-double-up"></i>
+
+  </button>
+    {% for video in videos %}
+    <div class="video-container"> 
+    <video autoplay mute loop id="videobanner {{ forloop.counter }}">
+      <source src="{{ video.video_file.url }}" type="video/mp4" />
+      Your browser does not support the video tag.
+      {% endfor %}
+    </video>
+
+    
+    
+
+    <div class="overlay "></div>
+    <div class="text-overlay ">
+      <h1>Mlinpek – mlinarstvo doo, Novi Sad</h1>
+      <h2>
+        {%trans 'Bavi se poslovima iz oblasti prerade žita – uglavnom pšenice'%}
+        </h2>
+    </div>
+</div>
+
+</div>
+    
+    
+
+    <br /><br /><br /><br /><br /><br /><br />
+
+    <section class="feature reveal">
+      <div class="fe-box">
+        <h3>I</h3>
+        <h4>- {%trans 'Izrada projektne dokumentacije'%} </h4>
+        <h5>- {%trans 'Tehnologija'%}</h5>
+        <h5>- {%trans 'Aspiracija'%} </h5>
+        <h5>- {%trans 'Pneumatski transport'%} </h5>
+      </div>
+
+      <div class="fe-box">
+        <h3>II</h3>
+        <h4> {%trans 'Nadzor nad montažom opreme i puštanje u rad'%} </h4>
+      </div>
+
+      <div class="fe-box">
+        <h3>III</h3>
+        <h4> {%trans ' Konsultacije na temu mlinarstva'%}</h4>
+      </div>
+
+      <div class="fe-box">
+        <h3>IV</h3>
+        <h4> {%trans 'Izdavaštvo'%} </h4>
+      </div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="fe-box">
+        <h3>V</h3>
+        <h4> {%trans 'Merenja'%} </h4>
+        <h5>- {%trans 'parametara strujanja vazduha (Q,dP)'%} </h5>
+        <h5>- {%trans 'efikasnosti rada mašina'%} </h5>
+        <h5>-
+          {% blocktrans %} snimanje i analiza postojećeg dijagrama mlevenja kroz softver Ashe Protein tabelle i Milltech {% endblocktrans %}
+        </h5>
+          
+      </div>
+
+      <div class="fe-box">
+        <h3>VI</h3>
+        <h4> {%trans 'Podešavanja'%}  </h4>
+        <h5>- {%trans 'aspiracionih i pneumatskih sistema'%}  </h5>
+        <h5>-{%trans 'procesne opreme (čistionica, mlin, silos za žito i brašno)'%} </h5>
+      </div>
+
+      <div class="fe-box">
+        <h3>VII</h3>
+        <h4>{%trans 'Obuka kadrova za:'%} </h4>
+        <h5>-{%trans 'kratka škola mlevenja'%} </h5>
+        <h5>-{%trans 'rad na procesnim mašinama'%} </h5>
+        <h5>-{%trans 'prevod uputstava za upotrebu mašina (sa engleskog na srpski)'%} </h5>
+      </div>
+
+      <div class="fe-box">
+        <h3>VIII</h3>
+        <h4>{%trans 'Trgovina'%} </h4>
+        <h5>-{%trans 'uvoz mlinske opreme'%} </h5>
+      </div>
+    </section>
+
+    <footer>Copyright © Mlinpek mlinarstvo 2020</footer>
+    <script>
+      window.onload = function() {
+          var videos = document.querySelectorAll('video');
+          videos.forEach(function(video) {
+              video.muted = true; // Ensure the video is muted
+              video.play().then(() => {
+                  console.log('Video is playing automatically');
+              }).catch(function(error) {
+                  console.log('Autoplay prevented: ', error);
+              });
+          });
+      };
+  </script>
+    <script src='{% static "js/cart.js" %}'>
+  </script>
+
+  </body>
+</html>

@@ -22,6 +22,18 @@ from store import views
 from django.urls import path
 from django.utils.translation import gettext_lazy as _
 
+urlpatterns = []
+
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        path('admin/', admin.site.urls),
+        path('i18n/', include('django.conf.urls.i18n')),
+        path('rosetta/', include('rosetta.urls')),
+        #path('paypal/', include('paypal.standard.ipn.urls')),
+        path('update_item/', views.updateItem, name="update_item"),
+
+    ]
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -58,13 +70,11 @@ urlpatterns+= i18n_patterns (
     path('loginPage/', views.loginPage, name="loginPage"),
     path('logoutPage/', views.logoutPage, name='logoutPage'),
     path('searchProducts/', views.searchProducts, name='searchProducts'),
-    
-
     path('set_language/', views.set_language, name='set_language'),
 
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  \
-  + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
-  
+    + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+
 

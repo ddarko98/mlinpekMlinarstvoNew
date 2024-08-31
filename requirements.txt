@@ -13,7 +13,9 @@ psycopg2-binary==2.9.9
 pycparser==2.22
 pythonnet==3.0.3
 regex==2024.7.24
+
 django-rosetta==0.10.0
+
 SQLite3-0611==0.0.1
 sqlparse==0.5.1
 tqdm==4.66.5

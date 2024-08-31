@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'store.apps.StoreConfig',
      "whitenoise.runserver_nostatic",
     'rosetta',
-    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [

@@ -14,11 +14,9 @@ from django.contrib.auth.decorators import login_required
 
 from django.utils.translation import activate
 
-from paypal.standard.forms import PayPalPaymentsForm
 import uuid
 from django.urls import reverse
-from paypal.standard.models import ST_PP_COMPLETED
-from paypal.standard.ipn.signals import valid_ipn_received
+
 # Create your views here.
 
 def store(request):

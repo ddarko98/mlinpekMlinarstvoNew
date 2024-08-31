@@ -20,13 +20,11 @@ polib==1.2.0
 psycopg2-binary==2.9.9
 pycparser==2.22
 python-dateutil==2.9.0.post0
-pythonnet==3.0.3
 pytz==2024.1
 regex==2024.7.24
 requests==2.32.3
 scipy==1.13.1
 six==1.16.0
-SQLite3-0611==0.0.1
 sqlparse==0.5.1
 tqdm==4.66.5
 tzdata==2024.1

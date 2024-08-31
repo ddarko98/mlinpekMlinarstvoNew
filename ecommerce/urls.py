@@ -12,6 +12,18 @@ urlpatterns = [
     path('update_item/', views.updateItem, name="update_item"),
 
     path('', views.store, name="store"),
+  
+]
+
+# Include Rosetta URLs if installed
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        path('rosetta/', include('rosetta.urls')),
+    ]
+
+# Define i18n patterns
+urlpatterns += i18n_patterns(
+    path('', views.store, name="store"),
     path('kontakt/', views.kontakt, name="kontakt"),
     path('pecanje/', views.pecanje, name="pecanje"),
     path('pesme/', views.pesme, name="pesme"),
@@ -35,17 +47,6 @@ urlpatterns = [
     path('logoutPage/', views.logoutPage, name='logoutPage'),
     path('searchProducts/', views.searchProducts, name='searchProducts'),
     path('set_language/', views.set_language, name='set_language'),
-]
-
-# Include Rosetta URLs if installed
-if 'rosetta' in settings.INSTALLED_APPS:
-    urlpatterns += [
-        path('rosetta/', include('rosetta.urls')),
-    ]
-
-# Define i18n patterns
-urlpatterns += i18n_patterns(
-    path('', views.store, name="store"),
     # ... other i18n-specific URL patterns ...
 )
 

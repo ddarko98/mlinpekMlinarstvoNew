@@ -20,5 +20,6 @@ tqdm==4.66.5
 virtualenv==20.26.3
 whitenoise==6.7.0
 scipy==1.13.1
+nltk==3.9.1
 
 

@@ -10,16 +10,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
     path('update_item/', views.updateItem, name="update_item"),
-
-    path('', views.store, name="store"),
+    path('rosetta/', include('rosetta.urls'))
   
 ]
 
-# Include Rosetta URLs if installed
-if 'rosetta' in settings.INSTALLED_APPS:
-    urlpatterns += [
-        path('rosetta/', include('rosetta.urls')),
-    ]
 
 # Define i18n patterns
 urlpatterns += i18n_patterns(

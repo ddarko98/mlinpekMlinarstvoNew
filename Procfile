@@ -1,1 +1,1 @@
-web: gunicorn ecommerce.wsgi --access-logfile - --error-logfile -
+gunicorn ecommerce.wsgi --bind 0.0.0.0:8080

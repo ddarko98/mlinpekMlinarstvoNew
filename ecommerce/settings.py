@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6l$)nfx&p2je)n9^_lq_*ke%8$hj(-dtf3#a7wuet=44wuzjo='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://mlinpekmlinarstvo.up.railway.app/']
 
 
 # Application definition
@@ -158,7 +158,6 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -178,8 +177,6 @@ EMAIL_HOST_PASSWORD = 'gura puzg qpxt qfeg'
 #novo gugl pravilo je to da na ovakve sajtove vise ne stavljas svoju originalnu gmail lozinku, vec moras da odes u gugl security da ti on da neku random lozinku koju ces ubaciti ovde
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-PAYPAL_TEST = True
-PAYPAL_RECEIVER_EMAIL = 'djangomlinpek562024@gmail.com'
 
 
 

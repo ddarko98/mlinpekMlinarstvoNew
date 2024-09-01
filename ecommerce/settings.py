@@ -158,6 +158,8 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
@@ -182,4 +184,3 @@ PAYPAL_RECEIVER_EMAIL = 'djangomlinpek562024@gmail.com'
 
 
 project_name = os.path.basename(os.path.dirname(os.path.abspath(__file__)))
-print('ovo je ime projekta ' + project_name)

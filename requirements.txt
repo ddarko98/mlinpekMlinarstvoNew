@@ -29,4 +29,3 @@ tzdata==2024.1
 urllib3==2.2.2
 virtualenv==20.26.3
 whitenoise==6.7.0
-encode==0.0.0

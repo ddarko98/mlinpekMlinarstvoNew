@@ -1,20 +1,30 @@
-{% load static %}
+{% load static %} {% load compress %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Mlinpek Mlinarstvo</title>
+    <title>Delete order- Mlinpek Mlinarstvo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Manage your orders at Mlinpek Mlinarstvo. Confirm or cancel the deletion of an order quickly and securely." />
+    <meta name="keywords" content="delete order, manage orders, Mlinpek Mlinarstvo, order cancellation" />
+
+    {% compress css %}
+
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'style/main.css' %}"
     />
+    {% endcompress %}
+
     <link
       rel="icon"
       href="{% static 'images/logoMlinpek.png' %}"
       type="image/x-icon"
-    />
+    />  
+    
+    {% compress js %}
+
     <script src='{% static "js/cart.js" %}'></script>
     <script type="text/javascript">
       let user = "{{request.user}}";
@@ -38,6 +48,7 @@
       }
       let csrftoken = getToken("csrftoken");
     </script>
+    {% endcompress %}
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"

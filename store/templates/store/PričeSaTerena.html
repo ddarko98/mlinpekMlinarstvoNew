@@ -1,15 +1,19 @@
-{% load static %}
+{% load static %} {% load compress %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Mlinpek Mlinarstvo</title>
+    <title>Priče sa terena- Mlinpek Mlinarstvo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Field stories and insights from the wheat milling industry, offering practical examples and real-world experiences in wheat trade, quality control, and milling practices.">
+    <meta name="keywords" content="wheat milling, field stories, agricultural insights, wheat quality, milling practices, wheat trade, flour production, grain classification, milling industry news, agricultural technology">
+    {% compress css %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'style/main.css' %}"
     />
+    {% endcompress %}
     <link
       rel="icon"
       href="{% static 'images/logoMlinpek.png' %}"
@@ -26,7 +30,7 @@
     <section id="blog">
       <div class="blog-box">
         <div class="blog-image">
-          <img src="{% static "images/prica1.jpeg" %}" alt="" />
+          <img src="{% static "images/prica1.jpeg" %}" alt="Prva prica sa terena" />
         </div>
         <div class="blog-details">
           <h4>Pšenica i kvalitet brašna u trgovini i preradi</h4>

@@ -1,18 +1,25 @@
-{% load static %}
+{% load static %} {% load compress %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kurs</title>
+    <meta name="author" content="Milan N. Skendžić, Nebojša Spasojević">
+    <meta name="description" content="A detailed course on grain processing technology, including wheat milling, quality control, storage of raw materials and finished products, and the implementation of specialized programs.">
+    <meta name="keywords" content="grain processing technology, wheat milling, grain storage, quality control, MILLTECH, ASCHE-PROTEIN TABLE, grain processing course, milling process, employee training">
+
+    <title>Course- Mlinpek Mlinarstvo</title>
+
+
     <link
       rel="icon"
       href="{% static 'image/mlinpek logo.png' %}"
       type="image/x-icon"
     />
-
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'style/main.css' %}" />
+      {% endcompress %}
   </head>
   <body>
     {%include 'store/navbar.html'%} {% block content %}
@@ -337,6 +344,6 @@
     </div>
     {% endblock %}
 
-    <style></style>
+    
   </body>
 </html>

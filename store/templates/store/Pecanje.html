@@ -1,15 +1,17 @@
-{% load static %}
+{% load static %} {% load compress %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Mlinpek Mlinarstvo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    {% compress css %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'style/main.css' %}"
     />
+    {% endcompress %}
     <link
     rel="icon"
     href="{% static 'images/logoMlinpek.png' %}"
@@ -25,6 +27,7 @@
 
     <section id='pecanje'
     style="background-image: url('{% static 'images/pecanje.jpg' %}')"
+    aria-label="Slika sa pecanja"
   >
   </body>
 </html>

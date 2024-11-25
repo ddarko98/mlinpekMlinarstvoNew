@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-{% load static %}
+{% load static %}{% load compress %}
+
 {% load i18n %}
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Mlinpek Mlinarstvo</title>
+    <title>Mlinpek – mlinarstvo doo, Novi Sad</title>
+    
+    <meta name="description" content="Welcome to Mlinpek Mlinarstvo, Novi Sad's trusted partner engaged in business in the field of grain processing, mainly wheat
+" />
+    <meta name="keywords" content="Mlinpek, milling, grain, flour, wheat, Novi Sad" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    {% compress css %}
+
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'style/main.css' %}"
     />
-
+    {% endcompress %}
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    
+
     <link
     rel="icon"
     href="{% static 'images/logoMlinpek.png' %}"
@@ -33,7 +43,7 @@
   </button>
     {% for video in videos %}
     <div class="video-container"> 
-    <video autoplay mute loop id="videobanner {{ forloop.counter }}">
+    <video autoplay mute loop id="videobanner {{ forloop.counter }} " aria-label="Video mlina na vodu">
       <source src="{{ video.video_file.url }}" type="video/mp4" />
       Your browser does not support the video tag.
       {% endfor %}
@@ -117,6 +127,8 @@
     </section>
 
     <footer>Copyright © Mlinpek mlinarstvo 2020</footer>
+
+    {% compress js %}
     <script>
       window.onload = function() {
           var videos = document.querySelectorAll('video');
@@ -130,8 +142,13 @@
           });
       };
   </script>
+  {% endcompress %}
+
+  {% compress js %}
+
     <script src='{% static "js/cart.js" %}'>
   </script>
+  {% endcompress %}
 
   </body>
 </html>

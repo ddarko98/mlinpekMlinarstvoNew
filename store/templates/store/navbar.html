@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 {% load static %}
 {% load i18n %}
+{% load compress %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Mlinpek Mlinarstvo</title>
+    <title>Navbar- Mlinpek Mlinarstvo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Reusable navigation bar component for easy website navigation.">
+    <meta name="keywords" content="navbar, navigation bar, responsive menu, web component, reusable UI">
+
+    {% compress css %}
+
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'style/main.css' %}"
     />
+    {% endcompress %}
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -27,7 +35,7 @@
     <section id="header">
       <div class="headerTop">
           <a href="{% url 'store' %}">
-              <img src='{% static "images/logoMlinpek.png" %}' class="logo" />
+              <img src='{% static "images/logoMlinpek.png" %}' class="logo" alt='Logo Mlinpek Mlinarstvo'/>
           </a>
           <button class="hamburger" id="hamburger">
               &#9776;
@@ -74,6 +82,8 @@
       </div>
   </section>
 
+  {% compress js %}
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const hamburger = document.getElementById('hamburger');
@@ -84,6 +94,7 @@
       });
   });
   </script>
+  {% endcompress %}
 
   
   </body>

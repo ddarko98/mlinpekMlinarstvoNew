@@ -1,15 +1,21 @@
-{% load static %}
+{% load static %} {% load compress %} {% load i18n %} 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Mlinpek Mlinarstvo</title>
+    <title>Courses - Mlinpek Mlinarstvo | Learn About Milling</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Explore Mlinpek Mlinarstvo's courses on milling. Learn from experts and enhance your skills with our professional training programs." />
+    <meta name="keywords" content="milling courses, baking courses, Mlinpek Mlinarstvo, training programs, skill enhancement" />  
+
+    {% compress css %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'style/main.css' %}"
     />
+    {% endcompress %}
+
     <link
       rel="icon"
       href="{% static 'images/logoMlinpek.png' %}"
@@ -32,24 +38,30 @@
             id="kursSlika"
           />
           <div class="des">
-            <b>Naziv: Osnovni kurs tehnologije prerade žita </b>
+            <b>{% trans 'Naziv: Osnovni kurs tehnologije prerade žita' %} </b>
 
-            <p>
-              <b>Autori: </b> Milan N. Skendžić, dipl. ing. tehnolog i Nebojša
-              Spasojević, dipl. ing tehnolog
+            <p> 
+             {% blocktrans %}Autori: Milan N. Skendžić, dipl. ing. tehnolog i Nebojša
+             Spasojević, dipl. ing tehnolog {% endblocktrans %}
             </p>
           </div>
 
           <p style="text-align: justify">
-            <b>Ponuda: </b> Dostavljamo Vam našu Ponudu za stručne usluge kod
+           
+            
+            {% blocktrans %} Ponuda: Dostavljamo Vam našu Ponudu za stručne usluge kod
             izvođenja obuke Vaših stručnih kadrova na vođenju tehnološkog
             procesa prerade pšenice. Napominjemo da će se obuka izvoditi u Vašim
             pogonima i tokom obuke biće kroz konsultacije definisani neophodni
-            zahvati na konsolidaciji pojedinih tehnoloških celina.
+            zahvati na konsolidaciji pojedinih tehnoloških celina.{% endblocktrans %}
           </p>
 
-          <p>Cena: 7000e</p>
-          <a href='{% url "kursTehnologije" %}'>Pogledaj ostatak ponude</a>
+          
+          <p>{% trans 'Cena: 7000e' %}</p>
+          
+          <a href='{% url "kursTehnologije" %}'>
+            {% trans 'Pogledaj ostatak ponude' %}
+          </a>
         </div>
       </div>
     </section>

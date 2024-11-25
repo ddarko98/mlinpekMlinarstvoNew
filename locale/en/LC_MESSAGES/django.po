@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-23 17:53+0200\n"
-"PO-Revision-Date: 2024-06-23 15:54+0000\n"
+"POT-Creation-Date: 2024-11-23 18:53+0100\n"
+"PO-Revision-Date: 2024-11-23 17:55+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -17,17 +17,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Translated-Using: django-rosetta 0.9.8\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: ecommerce/settings.py:134
+#: ecommerce/settings.py:140
 msgid "Serbian"
 msgstr ""
 
-#: ecommerce/settings.py:135
+#: ecommerce/settings.py:141
 msgid "English"
 msgstr ""
 
-#: ecommerce/settings.py:136
+#: ecommerce/settings.py:142
 msgid "Simplified Chinese"
 msgstr ""
 
@@ -1027,88 +1027,122 @@ msgstr ""
 msgid "\"%(path)s\" does not exist"
 msgstr ""
 
-#: store/templates/store/Kontakt.html:29
+#: store/templates/store/Kontakt.html:35
 msgid "Kontaktirajte nas!"
 msgstr "Contact us!"
 
-#: store/templates/store/Pesme.html:26
+#: store/templates/store/Kurs.html:41
+msgid "Naziv: Osnovni kurs tehnologije prerade žita"
+msgstr "Basic course in grain processing technology"
+
+#: store/templates/store/Kurs.html:44
+msgid ""
+"Autori: Milan N. Skendžić, dipl. ing. tehnolog i Nebojša\n"
+"             Spasojević, dipl. ing tehnolog "
+msgstr ""
+"Authors: Milan N. Skendžić, B.Sc. Eng. technologist and Nebojša\n"
+"Spasojević, B.Sc. ing technologist"
+
+#: store/templates/store/Kurs.html:52
+msgid ""
+" Ponuda: Dostavljamo Vam našu Ponudu za stručne usluge kod\n"
+"            izvođenja obuke Vaših stručnih kadrova na vođenju tehnološkog\n"
+"            procesa prerade pšenice. Napominjemo da će se obuka izvoditi u Vašim\n"
+"            pogonima i tokom obuke biće kroz konsultacije definisani neophodni\n"
+"            zahvati na konsolidaciji pojedinih tehnoloških celina."
+msgstr ""
+"Offer: We are sending you our Offer for professional services at\n"
+"carrying out the training of your professional personnel on the management of technological\n"
+"wheat processing process. Please note that the training will be conducted in Vasa\n"
+"plants and during training will be defined through consultations as necessary\n"
+"interventions on the consolidation of certain technological units."
+
+#: store/templates/store/Kurs.html:60
+msgid "Cena: 7000e"
+msgstr "Price: 7000e"
+
+#: store/templates/store/Kurs.html:63
+msgid "Pogledaj ostatak ponude"
+msgstr "See the rest of the offer"
+
+#: store/templates/store/Pesme.html:23
 msgid "Pesme Nebojše Spasojevića:"
 msgstr "Songs of Nebojša Spasojević:"
 
-#: store/templates/store/Pesme.html:32
+#: store/templates/store/Pesme.html:29
 msgid "Pesma Ankice Spasojević:"
 msgstr "Songs of Ankica Spasojević:"
 
-#: store/templates/store/Trgovina.html:58
+#: store/templates/store/Trgovina.html:64
 msgid "Sortiraj po:"
 msgstr "Sort by:"
 
-#: store/templates/store/Trgovina.html:62
+#: store/templates/store/Trgovina.html:68
 msgid "Ime"
 msgstr "Title"
 
-#: store/templates/store/Trgovina.html:65 store/templates/store/cart.html:59
-#: store/templates/store/checkout.html:37
+#: store/templates/store/Trgovina.html:71 store/templates/store/cart.html:71
+#: store/templates/store/checkout.html:44
 msgid "Cena"
 msgstr "Price:"
 
-#: store/templates/store/Trgovina.html:82
+#: store/templates/store/Trgovina.html:88
 msgid "Naziv:"
 msgstr "Title:"
 
-#: store/templates/store/Trgovina.html:84
+#: store/templates/store/Trgovina.html:90
 msgid "Cena:"
 msgstr "Price: "
 
-#: store/templates/store/Trgovina.html:85
+#: store/templates/store/Trgovina.html:91
 msgid "Autor:"
 msgstr "Author:"
 
-#: store/templates/store/cart.html:56
+#: store/templates/store/cart.html:68
 msgid "Obriši"
 msgstr "Delete:"
 
-#: store/templates/store/cart.html:57 store/templates/store/checkout.html:35
+#: store/templates/store/cart.html:69 store/templates/store/checkout.html:42
 msgid "Slika"
 msgstr "Image"
 
-#: store/templates/store/cart.html:58 store/templates/store/checkout.html:36
+#: store/templates/store/cart.html:70 store/templates/store/checkout.html:43
 msgid "Proizvod"
 msgstr "Product"
 
-#: store/templates/store/cart.html:60 store/templates/store/checkout.html:38
+#: store/templates/store/cart.html:72 store/templates/store/checkout.html:45
 msgid "Broj"
 msgstr "Quantity"
 
-#: store/templates/store/cart.html:61
+#: store/templates/store/cart.html:73
 msgid "Ukupno"
 msgstr "Total"
 
-#: store/templates/store/cart.html:107
+#: store/templates/store/cart.html:133
 msgid "Nastavi sa kupovinom"
 msgstr "Continiue shopping"
 
-#: store/templates/store/cart.html:115 store/templates/store/checkout.html:59
+#: store/templates/store/cart.html:141 store/templates/store/checkout.html:73
 msgid "Ukupno stvari:"
 msgstr "Total items"
 
-#: store/templates/store/cart.html:116 store/templates/store/checkout.html:60
+#: store/templates/store/cart.html:142 store/templates/store/checkout.html:74
 msgid "Ukupna cena:"
 msgstr "Total price"
 
-#: store/templates/store/cart.html:119
+#: store/templates/store/cart.html:145
 msgid "Kasa"
 msgstr "Checkout"
 
-#: store/templates/store/checkout.html:31
+#: store/templates/store/checkout.html:38
 msgid "Pregled porudžbine"
 msgstr "Odred summary"
 
-#: store/templates/store/checkout.html:68
+#: store/templates/store/checkout.html:82
 msgid "Nazad u korpu"
 msgstr "Back to cart"
 
-#: store/templates/store/checkout.html:71
+#: store/templates/store/checkout.html:85
 msgid "Potvrdite narudžbinu (plaćanje pouzećem)"
 msgstr "Confirm purchase (cash on delivery)"
 
@@ -1120,51 +1154,51 @@ msgstr "Order successful!"
 msgid "Nazad"
 msgstr "Back "
 
-#: store/templates/store/index.html:49
+#: store/templates/store/index.html:59
 msgid "Bavi se poslovima iz oblasti prerade žita – uglavnom pšenice"
 msgstr "Engaged in business in the field of grain processing, mainly wheat"
 
-#: store/templates/store/index.html:63
+#: store/templates/store/index.html:73
 msgid "Izrada projektne dokumentacije"
 msgstr "Project documentation"
 
-#: store/templates/store/index.html:64
+#: store/templates/store/index.html:74
 msgid "Tehnologija"
 msgstr "Tehnology"
 
-#: store/templates/store/index.html:65
+#: store/templates/store/index.html:75
 msgid "Aspiracija"
 msgstr "Aspiration"
 
-#: store/templates/store/index.html:66
+#: store/templates/store/index.html:76
 msgid "Pneumatski transport"
 msgstr "Pneumatic transport"
 
-#: store/templates/store/index.html:71
+#: store/templates/store/index.html:81
 msgid "Nadzor nad montažom opreme i puštanje u rad"
 msgstr "Supervision of equipment assembly and startup"
 
-#: store/templates/store/index.html:76
+#: store/templates/store/index.html:86
 msgid " Konsultacije na temu mlinarstva"
 msgstr "Consulting on wheat flour milling subject"
 
-#: store/templates/store/index.html:81
+#: store/templates/store/index.html:91
 msgid "Izdavaštvo"
 msgstr "Publishing"
 
-#: store/templates/store/index.html:88
+#: store/templates/store/index.html:98
 msgid "Merenja"
 msgstr "Measurment"
 
-#: store/templates/store/index.html:89
+#: store/templates/store/index.html:99
 msgid "parametara strujanja vazduha (Q,dP)"
 msgstr "Air flow, pressure drop (Q, dP)"
 
-#: store/templates/store/index.html:90
+#: store/templates/store/index.html:100
 msgid "efikasnosti rada mašina"
 msgstr "Machine eficiency"
 
-#: store/templates/store/index.html:92
+#: store/templates/store/index.html:102
 msgid ""
 " snimanje i analiza postojećeg dijagrama mlevenja kroz softver Ashe Protein "
 "tabelle i Milltech "
@@ -1172,134 +1206,134 @@ msgstr ""
 "actual flow diagram- making and analysing through softwares Ashe Protein and"
 " Milltech"
 
-#: store/templates/store/index.html:99
+#: store/templates/store/index.html:109
 msgid "Podešavanja"
 msgstr "Adjusting"
 
-#: store/templates/store/index.html:100
+#: store/templates/store/index.html:110
 msgid "aspiracionih i pneumatskih sistema"
 msgstr "aspiration and pneumatic systems"
 
-#: store/templates/store/index.html:101
+#: store/templates/store/index.html:111
 msgid "procesne opreme (čistionica, mlin, silos za žito i brašno)"
 msgstr "machines in cleaning, milling and storage plants"
 
-#: store/templates/store/index.html:106
+#: store/templates/store/index.html:116
 msgid "Obuka kadrova za:"
 msgstr "Training:"
 
-#: store/templates/store/index.html:107
+#: store/templates/store/index.html:117
 msgid "kratka škola mlevenja"
 msgstr " short milling course"
 
-#: store/templates/store/index.html:108
+#: store/templates/store/index.html:118
 msgid "rad na procesnim mašinama"
 msgstr "training on process machines"
 
-#: store/templates/store/index.html:109
+#: store/templates/store/index.html:119
 msgid "prevod uputstava za upotrebu mašina (sa engleskog na srpski)"
 msgstr "translating manual instructions (english- serbian)"
 
-#: store/templates/store/index.html:114 store/templates/store/navbar.html:33
+#: store/templates/store/index.html:124 store/templates/store/navbar.html:44
 msgid "Trgovina"
 msgstr "Trading"
 
-#: store/templates/store/index.html:115
+#: store/templates/store/index.html:125
 msgid "uvoz mlinske opreme"
 msgstr "import the milling equipment"
 
-#: store/templates/store/loginPage.html:23
+#: store/templates/store/loginPage.html:31
 #, fuzzy
 #| msgid "Prijava"
 msgid "Prijavi se"
 msgstr "Login"
 
-#: store/templates/store/loginPage.html:33
+#: store/templates/store/loginPage.html:41
 msgid "Nemate nalog? Registruj se"
 msgstr "Don't have account? Register"
 
-#: store/templates/store/loginPage.html:35
+#: store/templates/store/loginPage.html:43
 msgid "ovde"
 msgstr "here"
 
-#: store/templates/store/navbar.html:34
+#: store/templates/store/navbar.html:45
 msgid "Pecanje"
 msgstr "Fishing"
 
-#: store/templates/store/navbar.html:35
+#: store/templates/store/navbar.html:46
 msgid "Pesme"
 msgstr "Songs"
 
-#: store/templates/store/navbar.html:36
+#: store/templates/store/navbar.html:47
 msgid "Priče sa terena"
 msgstr "Stories from the field"
 
-#: store/templates/store/navbar.html:37
+#: store/templates/store/navbar.html:48
 msgid "Kurs"
 msgstr "Course"
 
-#: store/templates/store/navbar.html:38
+#: store/templates/store/navbar.html:49
 msgid "Kontakt"
 msgstr "Contacts"
 
-#: store/templates/store/navbar.html:42
+#: store/templates/store/navbar.html:53
 msgid "Pretraga"
 msgstr "Search"
 
-#: store/templates/store/navbar.html:52
-#: store/templates/store/registerPage.html:22
+#: store/templates/store/navbar.html:63
+#: store/templates/store/registerPage.html:26
 msgid "Registracija"
 msgstr "Registration"
 
-#: store/templates/store/navbar.html:53
+#: store/templates/store/navbar.html:64
 msgid "Prijava"
 msgstr "Login"
 
-#: store/templates/store/navbar.html:54
+#: store/templates/store/navbar.html:65
 msgid "Odjava"
 msgstr "Logout"
 
-#: store/templates/store/navbar.html:58
+#: store/templates/store/navbar.html:69
 msgid "Odabir jezika"
 msgstr "Select language"
 
-#: store/templates/store/navbar.html:59
+#: store/templates/store/navbar.html:70
 msgid "Srpski"
 msgstr "Serbian"
 
-#: store/templates/store/navbar.html:60
+#: store/templates/store/navbar.html:71
 msgid "Engleski"
 msgstr "English"
 
-#: store/templates/store/navbar.html:61
+#: store/templates/store/navbar.html:72
 msgid "Kineski"
 msgstr "Chinese"
 
-#: store/templates/store/navbar.html:66
+#: store/templates/store/navbar.html:77
 msgid "Pozdrav"
 msgstr "Hello"
 
-#: store/templates/store/registerPage.html:29
+#: store/templates/store/registerPage.html:33
 msgid "Grad"
 msgstr "City"
 
-#: store/templates/store/registerPage.html:32
+#: store/templates/store/registerPage.html:36
 msgid "Adresa"
 msgstr "Adress"
 
-#: store/templates/store/registerPage.html:44
+#: store/templates/store/registerPage.html:48
 #, fuzzy
 #| msgid "Imate vec nalog?"
 msgid "Imate već nalog?"
 msgstr "Already  have account?"
 
-#: store/templates/store/registerPage.html:46
+#: store/templates/store/registerPage.html:50
 #, fuzzy
 #| msgid "Prijava"
 msgid "Prijavi"
 msgstr "Login"
 
-#: store/templates/store/registerPage.html:47
+#: store/templates/store/registerPage.html:51
 msgid "se ovde."
 msgstr "here"
 

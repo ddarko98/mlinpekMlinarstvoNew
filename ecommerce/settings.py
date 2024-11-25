@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6l$)nfx&p2je)n9^_lq_*ke%8$hj(-dtf3#a7wuet=44wuzjo='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://mlinpek-mlinarstvo.up.railway.app']
@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'store.apps.StoreConfig',
     'rosetta',
      "whitenoise.runserver_nostatic",
+
+     'compressor'
     
 ]
 
@@ -61,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'htmlmin.middleware.HtmlMinifyMiddleware',
+    'htmlmin.middleware.MarkRequestMiddleware',
 
 ]
 
@@ -143,12 +147,39 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
 )
 
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
+]
+
+COMPRESS_CSS_FILTERS = [
+    "compressor.filters.css_default.CssAbsoluteFilter",
+    "compressor.filters.cssmin.CSSCompressorFilter",
+]
+
+COMPRESS_JS_FILTERS = [
+    "compressor.filters.jsmin.JSMinFilter",
+]
 
 
+
+COMPRESS_ENABLED = True  # Enable compression
+COMPRESS_OFFLINE = True  # Compress files during collectstatic
+COMPRESS_OUTPUT_DIR = "CACHE"
+
+
+HTML_MINIFY = True  # Enable HTML minification
+KEEP_COMMENTS_ON_MINIFYING = False  # Remove comments during minification
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+COMPRESS_ROOT = STATIC_ROOT
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = '/static/'
 

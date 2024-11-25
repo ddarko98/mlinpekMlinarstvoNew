@@ -1,20 +1,30 @@
-{% load static %} {% load i18n %}
+{% load static %} {% load i18n %} {% load compress %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Mlinpek Mlinarstvo</title>
+    <title>Cart</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="title" content=" Shopping Cart - Mlinpek Mlinarstvo">
+    <meta name="description" content="View the items in your shopping cart. Adjust your order of premium milling and baking products, and proceed to a secure checkout at Mlinpek Mlinarstvo." />
+    <meta name="keywords" content="korpa, cart, Mlinpek Mlinarstvo ">
+
+    {% compress css %}
+
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'style/main.css' %}"
     />
+    {% endcompress %}
+
     <link
       rel="icon"
       href="{% static 'images/logoMlinpek.png' %}"
       type="image/x-icon"
     />
+
     <script type="text/javascript">
       let user = "{{request.user}}";
 
@@ -37,6 +47,7 @@
       }
       let csrftoken = getToken("csrftoken");
     </script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -74,7 +85,7 @@
 
             <td class="korpaSlika">
               <p class="infoKadaSeSmanjiEkran">Slika:</p>
-              <img src="{{item.product.imageURL}}" alt="" / >
+              <img src="{{item.product.imageURL}}" alt="Product image" / >
             </td>
 
             <td class="korpaIme">
@@ -137,6 +148,11 @@
         </tr>
       </tbody>
     </table>
+
+    {% compress js %}
+
     <script src='{% static "js/cart.js" %}'></script>
+
+    {% endcompress %}
   </body>
 </html>

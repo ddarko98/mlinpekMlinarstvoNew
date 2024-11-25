@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-23 17:53+0200\n"
-"PO-Revision-Date: 2024-06-23 15:54+0000\n"
+"POT-Creation-Date: 2024-11-23 18:56+0100\n"
+"PO-Revision-Date: 2024-11-23 17:57+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -17,17 +17,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Translated-Using: django-rosetta 0.9.8\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: ecommerce/settings.py:134
+#: ecommerce/settings.py:140
 msgid "Serbian"
 msgstr ""
 
-#: ecommerce/settings.py:135
+#: ecommerce/settings.py:141
 msgid "English"
 msgstr ""
 
-#: ecommerce/settings.py:136
+#: ecommerce/settings.py:142
 msgid "Simplified Chinese"
 msgstr ""
 
@@ -1027,90 +1027,125 @@ msgstr ""
 msgid "\"%(path)s\" does not exist"
 msgstr ""
 
-#: store/templates/store/Kontakt.html:29
+#: store/templates/store/Kontakt.html:35
 msgid "Kontaktirajte nas!"
 msgstr "Kontaktirajte nas!"
 
-#: store/templates/store/Pesme.html:26
+#: store/templates/store/Kurs.html:41
+msgid "Naziv: Osnovni kurs tehnologije prerade žita"
+msgstr "Naziv: Osnovni kurs tehnologije prerade žita"
+
+#: store/templates/store/Kurs.html:44
+msgid ""
+"Autori: Milan N. Skendžić, dipl. ing. tehnolog i Nebojša\n"
+"             Spasojević, dipl. ing tehnolog "
+msgstr ""
+"Autori: Milan N. Skendžić, dipl. ing. tehnolog i Nebojša\n"
+"Spasojević, dipl. ing tehnolog"
+
+#: store/templates/store/Kurs.html:52
+msgid ""
+" Ponuda: Dostavljamo Vam našu Ponudu za stručne usluge kod\n"
+"            izvođenja obuke Vaših stručnih kadrova na vođenju tehnološkog\n"
+"            procesa prerade pšenice. Napominjemo da će se obuka izvoditi u Vašim\n"
+"            pogonima i tokom obuke biće kroz konsultacije definisani neophodni\n"
+"            zahvati na konsolidaciji pojedinih tehnoloških celina."
+msgstr ""
+"Ponuda: Dostavljamo Vam našu Ponudu za stručne usluge kod\n"
+"izvođenja obuke Vaših stručnih kadrova na vođenju tehnološkog\n"
+"procesa prerade pšenice. Napominjemo da će se obuka izvoditi u Vašim\n"
+"pogonima i tokom obuke biće kroz konsultacije definisani neophodni\n"
+"zahvati na konsolidaciji pojedinih tehnoloških celina."
+
+#: store/templates/store/Kurs.html:60
+#| msgid "Cena:"
+msgid "Cena: 7000e"
+msgstr "Cena: 7000e"
+
+#: store/templates/store/Kurs.html:63
+msgid "Pogledaj ostatak ponude"
+msgstr "Pogledaj ostatak ponude"
+
+#: store/templates/store/Pesme.html:23
 msgid "Pesme Nebojše Spasojevića:"
 msgstr "Pesme Nebojše Spasojevića:"
 
-#: store/templates/store/Pesme.html:32
+#: store/templates/store/Pesme.html:29
 msgid "Pesma Ankice Spasojević:"
 msgstr "Pesma Ankice Spasojević:"
 
-#: store/templates/store/Trgovina.html:58
+#: store/templates/store/Trgovina.html:64
 msgid "Sortiraj po:"
 msgstr "Sortiraj po:"
 
-#: store/templates/store/Trgovina.html:62
+#: store/templates/store/Trgovina.html:68
 msgid "Ime"
 msgstr "Ime:"
 
-#: store/templates/store/Trgovina.html:65 store/templates/store/cart.html:59
-#: store/templates/store/checkout.html:37
+#: store/templates/store/Trgovina.html:71 store/templates/store/cart.html:71
+#: store/templates/store/checkout.html:44
 msgid "Cena"
 msgstr "Cena:"
 
-#: store/templates/store/Trgovina.html:82
+#: store/templates/store/Trgovina.html:88
 msgid "Naziv:"
 msgstr "Naziv:"
 
-#: store/templates/store/Trgovina.html:84
+#: store/templates/store/Trgovina.html:90
 msgid "Cena:"
 msgstr "Cena:"
 
-#: store/templates/store/Trgovina.html:85
+#: store/templates/store/Trgovina.html:91
 msgid "Autor:"
 msgstr "Autor:"
 
-#: store/templates/store/cart.html:56
+#: store/templates/store/cart.html:68
 msgid "Obriši"
 msgstr "Obriši"
 
-#: store/templates/store/cart.html:57 store/templates/store/checkout.html:35
+#: store/templates/store/cart.html:69 store/templates/store/checkout.html:42
 msgid "Slika"
 msgstr "Slika"
 
-#: store/templates/store/cart.html:58 store/templates/store/checkout.html:36
+#: store/templates/store/cart.html:70 store/templates/store/checkout.html:43
 msgid "Proizvod"
 msgstr "Proizvod"
 
-#: store/templates/store/cart.html:60 store/templates/store/checkout.html:38
+#: store/templates/store/cart.html:72 store/templates/store/checkout.html:45
 msgid "Broj"
 msgstr "Broj"
 
-#: store/templates/store/cart.html:61
+#: store/templates/store/cart.html:73
 msgid "Ukupno"
 msgstr "Ukupno"
 
-#: store/templates/store/cart.html:107
+#: store/templates/store/cart.html:133
 msgid "Nastavi sa kupovinom"
 msgstr "Nastavi sa kupovinom"
 
-#: store/templates/store/cart.html:115 store/templates/store/checkout.html:59
+#: store/templates/store/cart.html:141 store/templates/store/checkout.html:73
 msgid "Ukupno stvari:"
 msgstr "Ukupno stvari:"
 
-#: store/templates/store/cart.html:116 store/templates/store/checkout.html:60
+#: store/templates/store/cart.html:142 store/templates/store/checkout.html:74
 msgid "Ukupna cena:"
 msgstr "Ukupna cena:"
 
-#: store/templates/store/cart.html:119
+#: store/templates/store/cart.html:145
 msgid "Kasa"
 msgstr "Kasa"
 
-#: store/templates/store/checkout.html:31
+#: store/templates/store/checkout.html:38
 #, fuzzy
 #| msgid "Pregled porudzbine"
 msgid "Pregled porudžbine"
 msgstr "Pregled porudžbine"
 
-#: store/templates/store/checkout.html:68
+#: store/templates/store/checkout.html:82
 msgid "Nazad u korpu"
 msgstr "Nazad u korpu"
 
-#: store/templates/store/checkout.html:71
+#: store/templates/store/checkout.html:85
 msgid "Potvrdite narudžbinu (plaćanje pouzećem)"
 msgstr "Potvrdite narudžbinu (plaćanje pouzećem)"
 
@@ -1122,51 +1157,51 @@ msgstr "Porudžbina uspešna!"
 msgid "Nazad"
 msgstr "Nazad"
 
-#: store/templates/store/index.html:49
+#: store/templates/store/index.html:59
 msgid "Bavi se poslovima iz oblasti prerade žita – uglavnom pšenice"
 msgstr "Bavi se poslovima iz oblasti prerade žita – uglavnom pšenice"
 
-#: store/templates/store/index.html:63
+#: store/templates/store/index.html:73
 msgid "Izrada projektne dokumentacije"
 msgstr "Izrada projektne dokumentacije"
 
-#: store/templates/store/index.html:64
+#: store/templates/store/index.html:74
 msgid "Tehnologija"
 msgstr "Tehnologija"
 
-#: store/templates/store/index.html:65
+#: store/templates/store/index.html:75
 msgid "Aspiracija"
 msgstr "Aspiracija"
 
-#: store/templates/store/index.html:66
+#: store/templates/store/index.html:76
 msgid "Pneumatski transport"
 msgstr "Pneumatski transport"
 
-#: store/templates/store/index.html:71
+#: store/templates/store/index.html:81
 msgid "Nadzor nad montažom opreme i puštanje u rad"
 msgstr "Nadzor nad montažom opreme i puštanje u rad"
 
-#: store/templates/store/index.html:76
+#: store/templates/store/index.html:86
 msgid " Konsultacije na temu mlinarstva"
 msgstr "Konsultacije na temu mlinarstva"
 
-#: store/templates/store/index.html:81
+#: store/templates/store/index.html:91
 msgid "Izdavaštvo"
 msgstr "Izdavaštvo"
 
-#: store/templates/store/index.html:88
+#: store/templates/store/index.html:98
 msgid "Merenja"
 msgstr "Merenja"
 
-#: store/templates/store/index.html:89
+#: store/templates/store/index.html:99
 msgid "parametara strujanja vazduha (Q,dP)"
 msgstr "parametara strujanja vazduha (Q,dP)"
 
-#: store/templates/store/index.html:90
+#: store/templates/store/index.html:100
 msgid "efikasnosti rada mašina"
 msgstr "efikasnosti rada mašina"
 
-#: store/templates/store/index.html:92
+#: store/templates/store/index.html:102
 msgid ""
 " snimanje i analiza postojećeg dijagrama mlevenja kroz softver Ashe Protein "
 "tabelle i Milltech "
@@ -1174,132 +1209,132 @@ msgstr ""
 "snimanje i analiza postojećeg dijagrama mlevenja kroz softver Ashe Protein "
 "tabelle i Milltech"
 
-#: store/templates/store/index.html:99
+#: store/templates/store/index.html:109
 msgid "Podešavanja"
 msgstr "Podešavanja"
 
-#: store/templates/store/index.html:100
+#: store/templates/store/index.html:110
 msgid "aspiracionih i pneumatskih sistema"
 msgstr "aspiracionih i pneumatskih sistema"
 
-#: store/templates/store/index.html:101
+#: store/templates/store/index.html:111
 msgid "procesne opreme (čistionica, mlin, silos za žito i brašno)"
 msgstr "procesne opreme (čistionica, mlin, silos za žito i brašno)"
 
-#: store/templates/store/index.html:106
+#: store/templates/store/index.html:116
 msgid "Obuka kadrova za:"
 msgstr "Obuka kadrova za:"
 
-#: store/templates/store/index.html:107
+#: store/templates/store/index.html:117
 msgid "kratka škola mlevenja"
 msgstr "kratka škola mlevenja"
 
-#: store/templates/store/index.html:108
+#: store/templates/store/index.html:118
 msgid "rad na procesnim mašinama"
 msgstr "rad na procesnim mašinama"
 
-#: store/templates/store/index.html:109
+#: store/templates/store/index.html:119
 msgid "prevod uputstava za upotrebu mašina (sa engleskog na srpski)"
 msgstr "prevod uputstava za upotrebu mašina (sa engleskog na srpski)"
 
-#: store/templates/store/index.html:114 store/templates/store/navbar.html:33
+#: store/templates/store/index.html:124 store/templates/store/navbar.html:44
 msgid "Trgovina"
 msgstr "Trgovina"
 
-#: store/templates/store/index.html:115
+#: store/templates/store/index.html:125
 msgid "uvoz mlinske opreme"
 msgstr "uvoz mlinske opreme"
 
-#: store/templates/store/loginPage.html:23
+#: store/templates/store/loginPage.html:31
 #, fuzzy
 #| msgid "Prijava"
 msgid "Prijavi se"
 msgstr "Prijava"
 
-#: store/templates/store/loginPage.html:33
+#: store/templates/store/loginPage.html:41
 msgid "Nemate nalog? Registruj se"
 msgstr "Nemate nalog? Registruj se"
 
-#: store/templates/store/loginPage.html:35
+#: store/templates/store/loginPage.html:43
 msgid "ovde"
 msgstr "ovde"
 
-#: store/templates/store/navbar.html:34
+#: store/templates/store/navbar.html:45
 msgid "Pecanje"
 msgstr "Pecanje"
 
-#: store/templates/store/navbar.html:35
+#: store/templates/store/navbar.html:46
 msgid "Pesme"
 msgstr "Pesme"
 
-#: store/templates/store/navbar.html:36
+#: store/templates/store/navbar.html:47
 msgid "Priče sa terena"
 msgstr "Priče sa terena"
 
-#: store/templates/store/navbar.html:37
+#: store/templates/store/navbar.html:48
 msgid "Kurs"
 msgstr "Kurs"
 
-#: store/templates/store/navbar.html:38
+#: store/templates/store/navbar.html:49
 msgid "Kontakt"
 msgstr "Kontakt"
 
-#: store/templates/store/navbar.html:42
+#: store/templates/store/navbar.html:53
 msgid "Pretraga"
 msgstr "Pretraga"
 
-#: store/templates/store/navbar.html:52
-#: store/templates/store/registerPage.html:22
+#: store/templates/store/navbar.html:63
+#: store/templates/store/registerPage.html:26
 msgid "Registracija"
 msgstr "Registracija"
 
-#: store/templates/store/navbar.html:53
+#: store/templates/store/navbar.html:64
 msgid "Prijava"
 msgstr "Prijava"
 
-#: store/templates/store/navbar.html:54
+#: store/templates/store/navbar.html:65
 msgid "Odjava"
 msgstr "Odjava"
 
-#: store/templates/store/navbar.html:58
+#: store/templates/store/navbar.html:69
 msgid "Odabir jezika"
 msgstr "Odabir jezika"
 
-#: store/templates/store/navbar.html:59
+#: store/templates/store/navbar.html:70
 msgid "Srpski"
 msgstr "Srpski"
 
-#: store/templates/store/navbar.html:60
+#: store/templates/store/navbar.html:71
 msgid "Engleski"
 msgstr "Engleski"
 
-#: store/templates/store/navbar.html:61
+#: store/templates/store/navbar.html:72
 msgid "Kineski"
 msgstr "Kineski"
 
-#: store/templates/store/navbar.html:66
+#: store/templates/store/navbar.html:77
 msgid "Pozdrav"
 msgstr "Pozdrav"
 
-#: store/templates/store/registerPage.html:29
+#: store/templates/store/registerPage.html:33
 msgid "Grad"
 msgstr "Grad"
 
-#: store/templates/store/registerPage.html:32
+#: store/templates/store/registerPage.html:36
 msgid "Adresa"
 msgstr "Adresa"
 
-#: store/templates/store/registerPage.html:44
+#: store/templates/store/registerPage.html:48
 #, fuzzy
 #| msgid "Imate vec nalog?"
 msgid "Imate već nalog?"
 msgstr "Imate već nalog?"
 
-#: store/templates/store/registerPage.html:46
+#: store/templates/store/registerPage.html:50
 msgid "Prijavi"
 msgstr "Prijavi"
 
-#: store/templates/store/registerPage.html:47
+#: store/templates/store/registerPage.html:51
 msgid "se ovde."
 msgstr "se ovde."
 

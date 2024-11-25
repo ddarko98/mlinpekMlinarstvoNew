@@ -251,22 +251,25 @@ def updateItem(request):
     productId = data['productId']
     action = data['action']
     print('Action:', action)
-    print('productId:', productId)
+    print('Product ID:', productId)
 
-    customer = Customer.objects.get(name=request.user.username) 
+    customer = Customer.objects.get(name=request.user.username)
     product = Product.objects.get(id=productId)
     order, created = Order.objects.get_or_create(customer=customer, complete=False)
 
-    orderItem, created =  OrderItem.objects.get_or_create(order=order, product=product)
+    orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
 
     if action == 'add':
-        orderItem.quantity = (orderItem.quantity + 1)
+        orderItem.quantity += 1
     elif action == 'remove':
-        orderItem.quantity = (orderItem.quantity - 1)
+        orderItem.quantity -= 1
+        if orderItem.quantity <= 0:
+            orderItem.delete()
+            return JsonResponse({'deleted': True})  # Notify frontend item is deleted
 
     orderItem.save()
+    cartItems = sum(item.quantity for item in order.orderitem_set.all())
 
-    if orderItem.quantity <= 0:
-        orderItem.delete()
+    return JsonResponse({'deleted': False})  # Notify frontend item is not deleted
 
-    return JsonResponse('item was added', safe=False)
+

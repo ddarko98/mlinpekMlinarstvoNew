@@ -1,4 +1,4 @@
-{% load static %}{% block content %}
+{% load static %}{% block content %} {% load compress %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,13 +15,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    {% compress css %}
     <link rel="stylesheet" href="{% static 'style/main.css' %}" />
+    {% endcompress %}
   </head>
   <body>
     {% include 'store/navbar.html' %}
     <section id="productDetails">
       <div class="productDetailsImage">
-        <img src="{{product.imageURL}}" alt="" />
+        <img src="{{product.imageURL}}" alt="Detaljnije o knjizi" />
       </div>
       <div class="productDetailsInfo">
         <h1 id="productDetailsName">{{ product.name }}</h1>

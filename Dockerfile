@@ -1,14 +1,22 @@
-FROM python:3.12-slim
+ARG PYTHON_VERSION=3.12-slim
 
-ENV PYTHONDONTWRITEBYTECODE 1 # Prevent Python from writing .pyc files to disk
-ENV PYTHONUNBUFFERED 1 # Prevent Python from buffering stdout and stderr
+FROM python:${PYTHON_VERSION}
 
-COPY . /app/
-WORKDIR /app
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN mkdir -p /code
+
+WORKDIR /code
+
+RUN pip install pipenv
+COPY Pipfile Pipfile.lock /code/
+RUN pipenv install --deploy --system
+COPY . /code
+
+ENV SECRET_KEY "lktKlRYByMpLODApvbW4MBtigKAVtAZcW4HAvgQqq0cYUXbUoY"
 RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "ecommerce.wsgi:application"]
+CMD ["gunicorn","--bind",":8000","--workers","2","ecommerce.wsgi"]

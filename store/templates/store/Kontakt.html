@@ -1,16 +1,22 @@
-{% load static %} {% load i18n %}
+{% load static %} {% load i18n %} {% load compress %}
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Mlinpek Mlinarstvo</title>
+    <title>Contact- Mlinpek Mlinarstvo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Get in touch with Mlinpek Mlinarstvo in Novi Sad. Contact us for inquiries about our milling and baking products or to discuss your needs." />
+    <meta name="keywords" content="contact Mlinpek, Mlinpek Mlinarstvo, Novi Sad, milling inquiries, baking solutions, contact" /> 
+
+    {% compress css %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'style/main.css' %}"
     />
+    {% endcompress %}
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"

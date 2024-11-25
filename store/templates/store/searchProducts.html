@@ -1,10 +1,10 @@
-{% include 'store/navbar.html' %}{% load i18n %}
+{% include 'store/navbar.html' %}{% load i18n %} {% load compress %}
 
 <section id="product1">
   {% if products %} {% for product in products %}
   <div class="pro-container">
     <div class="pro">
-      <img src="{{product.imageURL}}" width="350px" height="400px" alt="" />
+      <img src="{{product.imageURL}}" width="350px" height="400px" alt="Image of the searched product" />
 
       <div class="des">
         <h5>Naziv: {{product.name}}</h5>

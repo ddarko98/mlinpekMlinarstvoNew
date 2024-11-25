@@ -1,15 +1,20 @@
-{% load static %}
+{% load static %} {% load compress %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Mlinpek Mlinarstvo</title>
+    <title>Priča 1- Pšenica i kvalitet brašna u trgovini i preradi</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="keywords" content="wheat quality, milling process, flour production, wheat parameters, grain classification, wheat trade, milling industry, agricultural processes, wheat testing, milling efficiency">
+    <meta name="description" content="Detailed insights into wheat quality, milling processes, and factors affecting flour production, including expert opinions and international perspectives.">
+
+    {% compress css %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'style/main.css' %}"
     />
+    {% endcompress %}
     <link
       rel="icon"
       href="{% static 'images/logoMlinpek.png' %}"

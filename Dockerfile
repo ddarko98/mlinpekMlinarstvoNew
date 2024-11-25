@@ -2,21 +2,23 @@ ARG PYTHON_VERSION=3.12-slim
 
 FROM python:${PYTHON_VERSION}
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+# Environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
-RUN mkdir -p /code
-
+# Create and set working directory
 WORKDIR /code
 
-RUN pip install pipenv
-COPY Pipfile Pipfile.lock /code/
-RUN pipenv install --deploy --system
-COPY . /code
+# Install dependencies
+COPY requirements.txt /code/
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
-ENV SECRET_KEY "lktKlRYByMpLODApvbW4MBtigKAVtAZcW4HAvgQqq0cYUXbUoY"
+# Copy project files
+COPY . /code/
+
+# Collect static files
 RUN python manage.py collectstatic --noinput
 
-EXPOSE 8080
-
-CMD ["gunicorn","--bind",":8000","--workers","2","ecommerce.wsgi"]
+# Expose port and set the command
+EXPOSE 8000
+CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "ecommerce.wsgi"]

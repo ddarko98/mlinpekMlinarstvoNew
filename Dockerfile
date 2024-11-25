@@ -17,6 +17,6 @@ COPY . /code
 ENV SECRET_KEY "lktKlRYByMpLODApvbW4MBtigKAVtAZcW4HAvgQqq0cYUXbUoY"
 RUN python manage.py collectstatic --noinput
 
-EXPOSE 8000
+EXPOSE 8080
 
 CMD ["gunicorn","--bind",":8000","--workers","2","ecommerce.wsgi"]

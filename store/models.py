@@ -32,7 +32,6 @@ class Product(models.Model):
     instock = models.IntegerField(default=0, null=True, blank=True)
     description = models.CharField(max_length=1000, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
-    #detaljnije = models.SlugField(max_length=40)
 
     def __str__(self):
         return self.name

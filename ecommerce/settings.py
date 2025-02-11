@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-6l$)nfx&p2je)n9^_lq_*ke%8$hj(-dtf3#a7wuet=44wuzjo=
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://mlinpekmlinarstvonew-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://mlinpekmlinarstvo.up.railway.app']
 
 
 # Application definition
@@ -187,8 +187,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 

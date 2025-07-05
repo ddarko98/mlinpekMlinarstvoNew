@@ -2,5 +2,3 @@
 __pycache__/
 .env
 node_modules/
-static/
-media/

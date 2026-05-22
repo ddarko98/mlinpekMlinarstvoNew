@@ -33,7 +33,11 @@ ALLOWED_HOSTS = [
     "mlinpekmlinarstvo.up.railway.app",
     "www.mlinpekmlinarstvo.com",
     "mlinpekmlinarstvo.com",
+    "localhost",
+    "127.0.0.1",
+    "0.0.0.0",
 ]
+
 
 CSRF_TRUSTED_ORIGINS = [
     "https://mlinpekmlinarstvo.up.railway.app",

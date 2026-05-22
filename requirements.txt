@@ -21,8 +21,6 @@ whitenoise==6.7.0
 scipy==1.13.1
 nltk==3.9.1
 pandas==2.2.2
-
-...
 django-compressor>=3.0
 django-htmlmin==0.11.0
 Pillow==9.5.0
